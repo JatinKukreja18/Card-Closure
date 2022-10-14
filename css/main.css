@@ -2636,6 +2636,9 @@ hr {
   width: 100%;
 }
 /* Latest changes */
+.custom-select-reusable.is70{
+  width: 70%;
+}
 input[disabled].disabled-select{
   font-size: 13px;
   font-weight: 400;

@@ -6,7 +6,7 @@ x = document.getElementsByClassName("custom-select-reusable");
 l = x.length;
 for (i = 0; i < l; i++) {
     selElmnt = x[i].getElementsByTagName("select")[0];
-    currentID = selElmnt.parentElement.id;
+    selElmnt.parentElement.id;
     ll = selElmnt.length;
     /* For each element, create a new DIV that will act as the selected item: */
     a = document.createElement("DIV");
@@ -22,7 +22,7 @@ for (i = 0; i < l; i++) {
         c = document.createElement("DIV");
         c.innerHTML = selElmnt.options[j].innerHTML;
         // add additional parameteres based on specific select
-        switch (currentID) {
+        switch (selElmnt.parentElement.id) {
             case "reason-select":
                 c.setAttribute("data-next", 'step3-' + selElmnt.options[j].value);
                 c.setAttribute("data-current", 'step2'); 
@@ -45,14 +45,17 @@ for (i = 0; i < l; i++) {
                     h.innerHTML = this.innerHTML;
                     y = this.parentNode.getElementsByClassName("same-as-selected");
                     // call function to change step based on selection.
-                    switch (currentID) {
+                    switch (this.parentElement.parentElement.id) {
                         case "reason-select":
                             showNextStep(this.dataset.next,this.dataset.current);
                             displaySelection(this.dataset.current,this.innerHTML);
                             break;
                         case "new-billing-cycle-select":
                             $('#cycle-change-confirm').removeClass('disabled')
-                            break
+                            break;
+                        case "fee-waiver-select":
+                            $('#fee-waiver-confirm').removeClass('disabled');
+                            break;
                         default:
                             break;
                     }
@@ -183,8 +186,12 @@ function availOffer(step){
         case 'step3-4':
             // case of no Offers
             // show step 4 of more offers
-            showNextStep('step4-4','step3-4');
-            
+            showNextStep('step4-4','step3-4');            
+            break;
+        case 'step3-5':
+            // case of no Offers
+            // show step 4 of more offers
+            showNextStep('step4-5','step3-5');            
             break;
         case 'step4-4':
             // case for no offers
