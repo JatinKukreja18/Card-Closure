@@ -2,10 +2,11 @@ $(document).ready(function(){
     //=========Code Custom Select box ===============================
 var x, i, j, l, ll, selElmnt, a, b, c;
 /* Look for any elements with the class "custom-select": */
-x = document.getElementsByClassName("custom-select2");
+x = document.getElementsByClassName("custom-select-reusable");
 l = x.length;
 for (i = 0; i < l; i++) {
     selElmnt = x[i].getElementsByTagName("select")[0];
+    currentID = selElmnt.parentElement.id;
     ll = selElmnt.length;
     /* For each element, create a new DIV that will act as the selected item: */
     a = document.createElement("DIV");
@@ -20,8 +21,17 @@ for (i = 0; i < l; i++) {
          create a new DIV that will act as an option item: */
         c = document.createElement("DIV");
         c.innerHTML = selElmnt.options[j].innerHTML;
-        c.setAttribute("data-next", 'step3-' + selElmnt.options[j].value);
-        c.setAttribute("data-current", 'step2');
+        // add additional parameteres based on specific select
+        switch (currentID) {
+            case "reason-select":
+                c.setAttribute("data-next", 'step3-' + selElmnt.options[j].value);
+                c.setAttribute("data-current", 'step2'); 
+                break;
+        
+            default:
+                break;
+        }
+        
         c.addEventListener("click", function (e) {
             /* When an item is clicked, update the original select box,
              and the selected item: */
@@ -35,8 +45,18 @@ for (i = 0; i < l; i++) {
                     h.innerHTML = this.innerHTML;
                     y = this.parentNode.getElementsByClassName("same-as-selected");
                     // call function to change step based on selection.
-                    showNextStep(this.dataset.next,this.dataset.current);
-                    displaySelection(this.dataset.current,this.innerHTML);
+                    switch (currentID) {
+                        case "reason-select":
+                            showNextStep(this.dataset.next,this.dataset.current);
+                            displaySelection(this.dataset.current,this.innerHTML);
+                            break;
+                        case "new-billing-cycle-select":
+                            $('#cycle-change-confirm').removeClass('disabled')
+                            break
+                        default:
+                            break;
+                    }
+                    
                     yl = y.length;
                     for (k = 0; k < yl; k++) {
                         y[k].removeAttribute("class");
@@ -153,19 +173,31 @@ function availOffer(step){
     switch (step) {
         case 'step3-1':
             // case of Annual Fee Waiver
-            showNextStep('step4','step3-1');
+            showNextStep('step4-1','step3-1');
+            break;
+        case 'step3-3':
+            // case of no Offers
+            // show step 4 of more offers
+            showNextStep('step4-3','step3-3');
             break;
         case 'step3-4':
             // case of no Offers
             // show step 4 of more offers
-            showNextStep('step4','step3-4');
+            showNextStep('step4-4','step3-4');
             
             break;
-        case 'step4':
+        case 'step4-4':
             // case for no offers
             const selectedOffer = $('input[name="more-offers-radio"]:checked').val();
             // write what else happens here
-            showNextStep('step5','step4');
+            showNextStep('step5','step4-4');
+            break;
+        case 'step4-3':
+            // case for no offers
+            
+            // write what else happens here
+            showNextStep('step5','step4-3');
+            break;
         default:
             break;
     }

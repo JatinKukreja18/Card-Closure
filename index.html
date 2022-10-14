@@ -1159,7 +1159,7 @@
                                     </div>
                                 </div>
                                 <div class="collapse-content reinstatement-content-wrapp">
-                                    <div class="form-control custom-select custom-select2">
+                                    <div class="form-control custom-select custom-select-reusable" id="reason-select">
                                         <select  id="add-type" name="add-type" class="form-control add-type" >
                                             <option value="0">Select</option>
                                             <option value="1">Annual fee</option>
@@ -1210,7 +1210,7 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0" onClick="availOffer('step3-1')">Avail Offer</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="availOffer('step3-1')">Avail Offer</a>
                                             <a href="#" class="blue-link underlined mb-0 mt-0">Skip Offer</a>
                                         </div>
                                     </div>
@@ -1260,8 +1260,8 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0 ">Avail Offer</a>
-                                            <a href="#" class="blue-link underlined mb-0 mt-0 ">Skip Offer</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="availOffer('step3-3')">Avail Offer</a>
+                                            <a href="#" class="blue-link underlined mb-0 mt-0">Skip Offer</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1285,7 +1285,7 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0 " onClick="availOffer('step3-4')">Avail Offer</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="availOffer('step3-4')">Avail Offer</a>
                                             <a href="#" class="blue-link underlined mb-0 mt-0  ">Skip Offer</a>
                                         </div>
                                     </div>
@@ -1318,7 +1318,48 @@
                             </div>
                         </section>
                         <!-- STEP 4 -->
-                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step4">
+                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step4-3">
+
+                            <div class="points-tabbing">
+                                <div class="mumer-heading">
+                                    <span class="number-count numeric">4</span><span class="number-count check-img">
+                                        <img src="img/path-copy.svg" /></span> Change Billing Cycle
+                                </div>
+                                <div class="collapse-content ">
+                                    <div class="reinstatement-content-wrapp">
+                                        <div class="horizontal-select">
+                                            <label for="cb-select">Current Billing Cycle</label>
+                                            <div class="form-control" >
+                                                <input type="text" class="disabled-select" disabled value="8th of every month"/>
+                                            </div>
+                                        </div>
+                                        <div class="horizontal-select">
+                                            <label for="nb-select">New Billing Cycle</label>
+                                            <div class="form-control custom-select custom-select-reusable" id="new-billing-cycle-select">                                            
+                                                <select id="nb-select" name="nb-select" class="form-control nb-select">
+                                                    <option value="01">1st of every month</option>
+                                                    <option value="02">2nd of every month</option>
+                                                    <option value="03">3rd of every month</option>
+                                                    <option value="07">7th of every month</option>
+                                                    <option value="11">11th of every month</option>
+                                                    <option value="14">14th of every month</option>
+                                                    <option value="21">21st of every month</option>
+                                                    <option value="24">24th of every month</option>
+                                                    <option value="27">27th of every month</option>
+                                                    <option value="30">30th of every month</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-block tick-buttons-block">
+                                            <a href="request-received-successfully.html" id="cycle-change-confirm" class="blue-btn disabled">Confirm</a>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step4-4">
 
                             <div class="points-tabbing">
                                 <div class="mumer-heading">
@@ -1402,7 +1443,7 @@
                                                     </label>
                                                 </div>
                                                 <div class="button-block spaced">
-                                                    <a href="#" class="blue-btn mb-0 mt-0" onclick="availOffer('step4')">Avail Offer</a>
+                                                    <a href="#" class="blue-btn mb-0 mt-0" onclick="availOffer('step4-4')">Avail Offer</a>
                                                     <a href="#" class="blue-link underlined mb-0 mt-0 ">Skip Offer</a>
                                                 </div>
                                             </div>
