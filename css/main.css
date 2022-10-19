@@ -2640,6 +2640,24 @@ hr {
   width: 100%;
 }
 /* Latest changes */
+ul.add-on-offer-list{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  padding: 0;
+}
+.add-on-offer-list li{
+  list-style-type: none;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-bottom: 60px;
+}
+.add-on-offer-list li img{
+  width: 70px;
+}
 .others-text,.textarea{
   min-height: 200px;
   width: 400px;

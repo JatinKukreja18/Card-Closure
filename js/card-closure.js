@@ -1,5 +1,7 @@
 $(document).ready(function(){
-    //=========Code Custom Select box ===============================
+var isAddonGlobal = false;
+
+//=========Code Custom Select box ===============================
 var x, i, j, l, ll, selElmnt, a, b, c;
 /* Look for any elements with the class "custom-select": */
 x = document.getElementsByClassName("custom-select-reusable");
@@ -47,8 +49,10 @@ for (i = 0; i < l; i++) {
                     // call function to change step based on selection.
                     switch (this.parentElement.parentElement.id) {
                         case "reason-select":
+
                             showNextStep(this.dataset.next,this.dataset.current);
                             displaySelection(this.dataset.current,this.innerHTML);
+
                             break;
                         case "new-billing-cycle-select":
                             $('#cycle-change-confirm').removeClass('disabled')
@@ -129,13 +133,23 @@ function displaySelection(step,selectionText){
     }
 }
 
-function showNextStep(nextStep,currentStep) {
+function showNextStep(nextStep,currentStep,isAddon) {
+
+    if(isAddon!=undefined) isAddonGlobal = isAddon;
 
     // hide other steps of 3rd category
     const nextStepDashIndex = nextStep.indexOf('-')
     if(nextStep.substr(0,nextStepDashIndex) == 'step3'){
-        $('.main-wrap.step-3-wrapp.active').addClass('hidden');
-        $('.main-wrap.step-3-wrapp.active').removeClass('active');
+        // all step 3s
+        if(isAddonGlobal){
+            $('#step3-addon').removeClass('hidden');
+            $('#step3-addon').addClass('active');
+            $('#step3-addon').find(".mumer-heading").addClass("toggle");
+            return
+        }else{
+            $('.main-wrap.step-3-wrapp.active').addClass('hidden');
+            $('.main-wrap.step-3-wrapp.active').removeClass('active');
+        }
     }
 
     // hide current Step if it exists
@@ -163,7 +177,7 @@ function showNextStep(nextStep,currentStep) {
     }
 }
 
-function availOffer(step){
+function handleStepChange(step){
     // based on where the avail offer is clicked from, called different functions/process
 
     switch (step) {
@@ -201,6 +215,12 @@ function availOffer(step){
             
             // write what else happens here
             showNextStep('step5','step4-3');
+            break;
+        case 'step3-addon':
+            // case for confirm for add on
+            
+            // write what else happens here
+            showNextStep('step4-addon','step3-addon');
             break;
         default:
             break;

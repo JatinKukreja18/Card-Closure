@@ -1117,7 +1117,7 @@
                                     <div class="rec-radio-block-wrapp">
                                         <div class="radio-buttons-block">
                                             <div class="radio-block">
-                                                <input type="radio" id="radio_1" name="radio-group" checked>
+                                                <input type="radio" id="radio_1" name="card-group" value="primary" checked>
                                                 <label for="radio_1">
                                                     <span>
                                                         Primary Card  XXXX-XXXX-XXXX-1234
@@ -1126,7 +1126,7 @@
                                             </div>
                                             <div class="radio-block with-custom-select">
                                                 <div>
-                                                    <input type="radio" id="radio_2" name="radio-group">
+                                                    <input type="radio" id="radio_2" name="card-group" value="addon">
                                                 <label for="radio_2">
                                                         <span>Add-on Card</span>
                                                 </label>
@@ -1143,7 +1143,7 @@
                                         </div>
                                     </div>
                                     <div class="button-block">
-                                        <a href="#" class="blue-btn mb-0 mt-0 btn-radio-block" onclick="showNextStep('step2','step1')">Next</a>
+                                        <a href="#" class="blue-btn mb-0 mt-0 btn-radio-block" onclick="showNextStep('step2','step1',$('input[name=card-group]:checked').val() === 'addon')">Next</a>
                                     </div>
                             </div>
 
@@ -1188,6 +1188,42 @@
                             </div>
 
                         </section>
+                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step3-addon">
+
+                            <div class="points-tabbing">
+                                <div class="mumer-heading">
+                                    <span class="number-count numeric">3</span><span class="number-count check-img">
+                                        <img src="img/path-copy.svg" /></span> Benefits of Add On Card
+                                </div>
+                                <div class="collapse-content ">
+                                    <div class="reinstatement-content-wrapp">
+                                        <p class="mb-10">Do you know, you can do so much with your Add-on card:</p>
+                                        <ul class="add-on-offer-list">
+                                            <li>
+                                                <img src="./img/rupee.png" alt="">
+                                                <p>Absolutely free of cost</p>
+                                            </li>
+                                            <li>
+                                                <img src="./img/rupee.png" alt="">
+                                                <p>Share your credit limit with your family</p>
+                                            </li>
+                                            <li>
+                                                <img src="./img/rupee.png" alt="">
+                                                <p>Single statement for all cards</p>
+                                            </li>
+                                            <li>
+                                                <img src="./img/rupee.png" alt="">
+                                                <p>Add-on cards makes shopping by your loved ones easy</p>
+                                            </li>
+                                        </ul>
+                                        <div class="button-block spaced">
+                                            <a href="javascript:void(0);" class="blue-btn mb-0 mt-0" >Continue using card</a>
+                                            <a href="javascript:void(0);" class="blue-link underlined mb-0 mt-0" onclick="handleStepChange('step3-addon')">Skip</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                         <section class="main-wrap my-profile border-top step-3-wrapp  hidden" id="step3-1">
 
                             <div class="points-tabbing">
@@ -1205,7 +1241,7 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="availOffer('step3-1')">Avail Offer</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChange('step3-1')">Avail Offer</a>
                                             <a href="#" class="blue-link underlined mb-0 mt-0">Skip Offer</a>
                                         </div>
                                     </div>
@@ -1230,7 +1266,7 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0 " onclick="availOffer('step3-2')">Avail Offer</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0 " onclick="handleStepChange('step3-2')">Avail Offer</a>
                                             <a href="#" class="blue-link underlined mb-0 mt-0" >Skip Offer</a>
                                         </div>
                                     </div>
@@ -1255,7 +1291,7 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="availOffer('step3-3')">Avail Offer</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChange('step3-3')">Avail Offer</a>
                                             <a href="#" class="blue-link underlined mb-0 mt-0">Skip Offer</a>
                                         </div>
                                     </div>
@@ -1280,7 +1316,7 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="availOffer('step3-4')">Avail Offer</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChange('step3-4')">Avail Offer</a>
                                             <a href="#" class="blue-link underlined mb-0 mt-0  ">Skip Offer</a>
                                         </div>
                                     </div>
@@ -1305,7 +1341,7 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0 " onclick="availOffer('step3-5')">Avail Offer</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0 " onclick="handleStepChange('step3-5')">Avail Offer</a>
                                             <a href="#" class="blue-link underlined mb-0 mt-0 ">Skip Offer</a>
                                         </div>
                                     </div>
@@ -1438,7 +1474,7 @@
                                                     </label>
                                                 </div>
                                                 <div class="button-block spaced">
-                                                    <a href="#" class="blue-btn mb-0 mt-0" onclick="availOffer('step4-4')">Avail Offer</a>
+                                                    <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChange('step4-4')">Avail Offer</a>
                                                     <a href="#" class="blue-link underlined mb-0 mt-0 ">Skip Offer</a>
                                                 </div>
                                             </div>
@@ -1482,6 +1518,50 @@
                             <div class="points-tabbing">
                                 <div class="mumer-heading">
                                     <span class="number-count numeric">5</span><span class="number-count check-img">
+                                        <img src="img/path-copy.svg" /></span> 
+                                    <div class="main-heading-main">
+                                        <div class="main-heading">Confirm</div> 
+                                        <div class="sub-heading visible">Please review your request:</div>
+                                    </div>
+                                </div>
+                                <div class="collapse-content ">
+                                    <div class="reinstatement-content-wrapp">
+                                        <div class="closure-reason">
+                                            <b>Reason for closing card: XXX XXX-2345</b>
+                                            <p id="closure-readon"></p>
+                                        </div>
+                                        <div class="">
+                                            <div class="card-view-holder message-seccess-view">
+                                                <div class="list-container-selectbox flex-row align-item-center cong-message">
+                                                    <div class="trans-style d-inline-block m-0 mr-5 fw-semibold text-13">Please Note:</div>
+                                                    <ol>
+                                                        <li>After your card closure request is processed successfully, you will not be able to make any transactions using this card.</li>
+                                                        <li>Add-on Cards,if any, associated with your primary card will also get closed.</li>
+                                                    </ol>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label class="sbi-input-checkbox">I hereby confirm that I have read the <a href="#">Terms & Conditions</a> and want to proceed with
+                                                    the card closure request.
+                                                        <input type="checkbox" id="terms_conditions">
+                                                        <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                            <div class="input-block tick-buttons-block">
+                                                <a href="javascript:void(0);" class="blue-btn" onclick="tickActive();">Submit</a>
+                                                <a href="#" class="step-2 blue-btn mb-0 gray-btn">Cancel</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="main-wrap my-profile border-top step-5-wrapp  hidden" id="step4-addon">
+
+                            <div class="points-tabbing">
+                                <div class="mumer-heading">
+                                    <span class="number-count numeric">4</span><span class="number-count check-img">
                                         <img src="img/path-copy.svg" /></span> 
                                     <div class="main-heading-main">
                                         <div class="main-heading">Confirm</div> 
