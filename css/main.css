@@ -664,6 +664,10 @@ input[type="range"] + .thumb.active .value {
   line-height: 1.83;
   color: #7f7f7f;
 }
+.message-seccess-view a{
+  text-decoration: underline;
+  -webkit-text-stroke:initial
+}
 .card-amount {
   font-size: 12px;
   color: #666666;
@@ -2779,10 +2783,14 @@ label.card-label::after{
   background: #fff;
   border: 1px solid #dddddd;
   padding: 14px 15px;
+  border-radius:0 0 9px 9px;
 }
 @media (max-width:767px) {
   .button-block{
     flex-direction: column;
+  }
+  .offers-radio-block-wrapp{
+    padding-left: 14px;
   }
 }
 
@@ -2832,6 +2840,7 @@ label.card-label::after{
 
   .rec-radio-block-wrapp {
     margin-top: 15px;
+    padding-left: 65px;
   }
 
   .page-top.mobile-custom-gap.border-top {
