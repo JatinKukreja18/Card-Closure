@@ -181,6 +181,9 @@ function handleStepChange(step){
     // based on where the avail offer is clicked from, called different functions/process
 
     switch (step) {
+        case 'step1':
+            showNextStep('step2','step1',$('input[name=card-group]:checked').val() === 'addon')
+            break;
         case 'step3-1':
             // case of Annual Fee Waiver
             showNextStep('step4-1','step3-1');
