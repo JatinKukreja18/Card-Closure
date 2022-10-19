@@ -131,18 +131,6 @@ function displaySelection(step,selectionText){
 
 function showNextStep(nextStep,currentStep) {
 
-    // switch (currentStep) {
-    //     case 'step2':
-            
-    //         break;
-    
-    //     default:
-    //         break;
-    // }
-
-
-
-
     // hide other steps of 3rd category
     const nextStepDashIndex = nextStep.indexOf('-')
     if(nextStep.substr(0,nextStepDashIndex) == 'step3'){
@@ -151,6 +139,11 @@ function showNextStep(nextStep,currentStep) {
     }
 
     // hide current Step if it exists
+    // expect when others i,e. step3-6 is chosen
+    if(nextStep == "step3-6"){
+        $('.select-reson-cnt.others').show();
+        return;
+    }
     if(currentStep){
         $('.main-wrap.my-profile#'+currentStep).addClass('filled');    
         $('.main-wrap.my-profile#'+currentStep).removeClass('active');    
@@ -178,8 +171,12 @@ function availOffer(step){
             // case of Annual Fee Waiver
             showNextStep('step4-1','step3-1');
             break;
+        case 'step3-2':
+            // case of Low Credit Limit
+            $('#redirect-modal').show();
+            break;            
         case 'step3-3':
-            // case of no Offers
+            // case of Change Billing Cycle
             // show step 4 of more offers
             showNextStep('step4-3','step3-3');
             break;
@@ -189,18 +186,18 @@ function availOffer(step){
             showNextStep('step4-4','step3-4');            
             break;
         case 'step3-5':
-            // case of no Offers
+            // case of other fees and charges
             // show step 4 of more offers
             showNextStep('step4-5','step3-5');            
             break;
         case 'step4-4':
-            // case for no offers
+            // case for step 4 More offers in  "no offers"
             const selectedOffer = $('input[name="more-offers-radio"]:checked').val();
             // write what else happens here
             showNextStep('step5','step4-4');
             break;
         case 'step4-3':
-            // case for no offers
+            // case for step 4 change billing cycle in  "billing cycle issues."
             
             // write what else happens here
             showNextStep('step5','step4-3');

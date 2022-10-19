@@ -1170,13 +1170,8 @@
                                             <option value="6">Other</option>
                                         </select>
                                     </div>
-                                    <div class="select-reson-cnt">
-                                        <div class="card-view-holder message-seccess-view">
-                                            <div class="list-container-selectbox flex-row align-item-center cong-message">
-                                                <div class="trans-style d-inline-block m-0 mr-5 fw-semibold text-13">Please Note:</div>
-                                                <p>After your card closure request is processed successfully, you will not be able to make any transactions using this card. </p>
-                                            </div>
-                                        </div>
+                                    <div class="select-reson-cnt others">
+                                        <textarea placeholder="Please Elaborate" class="others-text"></textarea>
                                         <!-- <div>
                                             <label class="sbi-input-checkbox">I hereby confirm that I have read the <a href="#">Terms & Conditions</a> and want to proceed with
                                                 the card closure request.
@@ -1184,9 +1179,9 @@
                                                     <span class="checkmark"></span>
                                             </label>
                                         </div> -->
-                                        <div class="input-block tick-buttons-block">
-                                            <a href="javascript:void(0);" class="blue-btn" onclick="tickActive();">Confirm</a>
-                                            <a href="#" class="step-2 blue-btn mb-0 gray-btn">Cancel</a>
+                                        <div class="input-block ">
+                                            <a href="request-received-successfully.html" class="blue-btn">Next</a>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -1235,8 +1230,8 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0 ">Avail Offer</a>
-                                            <a href="#" class="blue-link underlined mb-0 mt-0 ">Skip Offer</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0 " onclick="availOffer('step3-2')">Avail Offer</a>
+                                            <a href="#" class="blue-link underlined mb-0 mt-0" >Skip Offer</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1464,7 +1459,7 @@
                                         
                                         <div class="form-control custom-select custom-select-reusable is70" id="fee-waiver-select">                                            
                                             <select id="fw-select" name="fw-select" class="form-control fw-select">
-                                                <option value="">Select</option>
+                                                <option value="">Select a request</option>
                                                 <option value="Late Payment Fee">Late Payment Fee</option>
                                                 <option value="Overlimit charges">Overlimit charges</option>
                                                 <option value="Cash advance charges">Cash advance charges</option>
@@ -1552,7 +1547,18 @@
                     </section>
                 </div>
             </div>  	  
+            <div id="redirect-modal" class="modal custom-modal">
 
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header"><h2 class="modal-title">You will be redirected to the Credit Limit Increase journey.</h2></div>
+                    <div class="button-block spaced mt-15">
+                        <a href="request-received-successfully.html" class="blue-btn small-width mb-0 mt-0" id="multicard-process-show">Okay</a>
+                        <a href="javascript:void(0);" class="" onclick="$('#redirect-modal').hide();" >Cancel</a>
+                    </div>
+                </div>
+
+            </div>
             <div id="myModal" class="modal custom-modal">
 
                 <!-- Modal content -->

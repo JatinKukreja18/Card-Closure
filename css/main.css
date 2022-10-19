@@ -638,7 +638,7 @@ input[type="range"] + .thumb.active .value {
   color: #8a8a96;
 }
 .message-seccess-view {
-  border: solid 1px #dddddd;
+  border: solid 1px #dcecf3;
   background-color: #f2f9fc;
   padding: 20px;
 }
@@ -646,8 +646,12 @@ input[type="range"] + .thumb.active .value {
   color: #000;
   font-weight: 600;
 }
+.message-seccess-view .gray {
+  color: #7f7f7f;
+  font-weight: 600;
+}
 .message-seccess-view h2.trans-style {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: normal;
   line-height: 1.22;
   color: #222222;
@@ -658,7 +662,7 @@ input[type="range"] + .thumb.active .value {
   margin-top: 12px;
   font-size: 12px;
   line-height: 1.83;
-  color: #222222;
+  color: #7f7f7f;
 }
 .card-amount {
   font-size: 12px;
@@ -2636,6 +2640,34 @@ hr {
   width: 100%;
 }
 /* Latest changes */
+.others-text,.textarea{
+  min-height: 200px;
+  width: 400px;
+  margin: 30px 0;
+  resize: none;
+  border: 1px solid #dddddd;
+  padding: 20px;
+}
+textarea::-webkit-input-placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #a8a8a8;
+}
+textarea:-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #a8a8a8;
+}
+textarea::placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #a8a8a8;
+}
 .custom-select-reusable.is70{
   width: 70%;
 }
