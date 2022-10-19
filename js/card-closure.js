@@ -160,7 +160,8 @@ function showNextStep(nextStep,currentStep,isAddon) {
     }
     if(currentStep){
         $('.main-wrap.my-profile#'+currentStep).addClass('filled');    
-        $('.main-wrap.my-profile#'+currentStep).removeClass('active');    
+        $('.main-wrap.my-profile#'+currentStep).removeClass('active');
+        $('.select-reson-cnt.others').hide();    
     }
     // make next step active
     $('.main-wrap.my-profile.hidden#'+nextStep).removeClass('hidden');
@@ -186,7 +187,7 @@ function handleStepChange(step){
             break;
         case 'step3-1':
             // case of Annual Fee Waiver
-            showNextStep('step4-1','step3-1');
+            showNextStep('step4-4','step3-1');
             break;
         case 'step3-2':
             // case of Low Credit Limit

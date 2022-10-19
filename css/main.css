@@ -2780,6 +2780,13 @@ label.card-label::after{
   border: 1px solid #dddddd;
   padding: 14px 15px;
 }
+@media (max-width:767px) {
+  .button-block{
+    flex-direction: column;
+  }
+}
+
+
 @media (max-width: 767px) {
   .recurring-item {
     width: 100%;
