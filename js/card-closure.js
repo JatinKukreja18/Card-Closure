@@ -49,7 +49,7 @@ for (i = 0; i < l; i++) {
                     // call function to change step based on selection.
                     switch (this.parentElement.parentElement.id) {
                         case "reason-select":
-
+                            removeOpenedSteps();
                             showNextStep(this.dataset.next,this.dataset.current);
                             displaySelection(this.dataset.current,this.innerHTML);
 
@@ -132,7 +132,14 @@ function displaySelection(step,selectionText){
             break;
     }
 }
-
+function removeOpenedSteps(){
+    $('.main-wrap.my-profile.step-3-wrapp').removeClass('filled');    
+    $('.main-wrap.my-profile.step-3-wrapp').removeClass('active');   
+    $('.main-wrap.my-profile.step-3-wrapp').addClass('hidden');   
+    $('.main-wrap.my-profile.step-4-wrapp').removeClass('filled');    
+    $('.main-wrap.my-profile.step-4-wrapp').removeClass('active');   
+    $('.main-wrap.my-profile.step-4-wrapp').addClass('hidden');   
+}
 function showNextStep(nextStep,currentStep,isAddon) {
 
     if(isAddon!=undefined) isAddonGlobal = isAddon;
@@ -175,6 +182,18 @@ function showNextStep(nextStep,currentStep,isAddon) {
             scrollTop: (target.offset().top - 110)
         });
         return false;
+    }
+}
+
+function validateForm(el,formId){
+    console.log(el);
+    console.log(formId);
+    if(el.checked){
+        $("#" +formId + ' .e-sign-button').removeClass('gray-btn');
+        $("#" +formId + ' .e-sign-button').addClass('tick-active');
+    }else{
+        $("#" +formId + ' .e-sign-button').addClass('gray-btn');
+        $("#" +formId + ' .e-sign-button').removeClass('tick-active');
     }
 }
 

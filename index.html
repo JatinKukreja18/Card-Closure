@@ -1198,24 +1198,26 @@
                                 <div class="collapse-content ">
                                     <div class="reinstatement-content-wrapp">
                                         <p class="mb-10">Do you know, you can do so much with your Add-on card:</p>
-                                        <ul class="add-on-offer-list">
-                                            <li>
-                                                <img src="./img/rupee.png" alt="">
-                                                <p>Absolutely free of cost</p>
-                                            </li>
-                                            <li>
-                                                <img src="./img/rupee.png" alt="">
-                                                <p>Share your credit limit with your family</p>
-                                            </li>
-                                            <li>
-                                                <img src="./img/rupee.png" alt="">
-                                                <p>Single statement for all cards</p>
-                                            </li>
-                                            <li>
-                                                <img src="./img/rupee.png" alt="">
-                                                <p>Add-on cards makes shopping by your loved ones easy</p>
-                                            </li>
-                                        </ul>
+                                        <div class="add-on-offer-list-wrapper">
+                                            <ul class="add-on-offer-list">
+                                                <li>
+                                                    <img src="./img/icon-screenshot.png" alt="">
+                                                    <p>Absolutely free of cost</p>
+                                                </li>
+                                                <li>
+                                                    <img src="./img/icon-screenshot.png" alt="">
+                                                    <p>Share your credit limit with your family</p>
+                                                </li>
+                                                <li>
+                                                    <img src="./img/icon-screenshot.png" alt="">
+                                                    <p>Single statement for all cards</p>
+                                                </li>
+                                                <li>
+                                                    <img src="./img/icon-screenshot.png" alt="">
+                                                    <p>Add-on cards makes shopping by your loved ones easy</p>
+                                                </li>
+                                            </ul>
+                                        </div>
                                         <div class="button-block spaced">
                                             <a href="javascript:void(0);" class="blue-btn mb-0 mt-0" >Continue using card</a>
                                             <a href="javascript:void(0);" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-addon')">Skip</a>
@@ -1586,17 +1588,20 @@
                                                     
                                                 </div>
                                             </div>
-                                            <div>
-                                                <label class="sbi-input-checkbox">I hereby confirm that I have read the <a href="#">Terms & Conditions</a> and want to proceed with
-                                                    the card closure request.
-                                                        <input type="checkbox" id="terms_conditions">
-                                                        <span class="checkmark"></span>
-                                                </label>
-                                            </div>
-                                            <div class="input-block tick-buttons-block">
-                                                <a href="javascript:void(0);" class="blue-btn gray-btn e-sign-button" onclick="tickActive();">Submit</a>
-                                                <a href="#" class="step-2 blue-btn mb-0 gray-btn">Cancel</a>
-                                            </div>
+                                            <form action="" id="terms-form-confirm-4">
+
+                                                <div>
+                                                    <label class="sbi-input-checkbox">I hereby confirm that I have read the <a href="#">Terms & Conditions</a> and want to proceed with
+                                                        the card closure request.
+                                                            <input type="checkbox" onchange="validateForm(this,'terms-form-confirm-4')">
+                                                            <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                                <div class="input-block tick-buttons-block">
+                                                    <a href="javascript:void(0);" class="blue-btn gray-btn e-sign-button" onclick="tickActive();">Submit</a>
+                                                    <a href="#" class="step-2 blue-btn mb-0 gray-btn">Cancel</a>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -1616,7 +1621,8 @@
                                                                                     <a href="#" class="input-blue-text">Resend OTP</a>
                                                                                 </div>
                                                                                 <div class="otp-submit-block">
-                                                                                    <a href="request-received-successfully.html" class="step-2 blue-btn mb-0">Submit</a>
+                                                                                    <!-- <a href="request-received-successfully.html" class="step-2 blue-btn mb-0">Submit</a> -->
+                                                                                    <a href="javascript:void(0);" onclick="$('#connect-modal').show();" class="step-2 blue-btn mb-0">Submit</a>
                                                                                     <a href="#" class="step-2 blue-btn gray-btn mb-0">Cancel</a>
                                                                                 </div>
                                                                             </div>
@@ -1637,6 +1643,45 @@
                         <a href="request-received-successfully.html" class="blue-btn small-width mb-0 mt-0" id="multicard-process-show">Okay</a>
                         <a href="javascript:void(0);" class="blue-btn small-width  gray-btn" onclick="$('#redirect-modal').hide();" >Cancel</a>
                     </div>
+                </div>
+
+            </div>
+            <div id="connect-modal" class="modal custom-modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">We would like to connect with you</h2>
+                        <p>Would you like to select a preferred time slot for us to connect with you?</p>
+                    </div>
+                    <div class="close">X</div>
+                    <section class="content text-center">		
+                        <form class="connect-modal-form">
+                            <div class="form-group align-items-center mt-0">
+                                <div class="col-md-12">
+                                    <div class="form-control mb-10">
+                                        <!-- replace this with suitable datepicker -->
+                                        <input type="date" placeholder="Select Date" class="form-control connect-form-input" >
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-control mb-10">
+                                        <!-- replace this with suitable dropdown -->
+                                        <input type="text" placeholder="Select Time" class="form-control connect-form-input" >
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-control mb-10">
+                                        <!-- replace this with suitable dropdown -->
+                                        <input type="text"  placeholder="Select Language" class="form-control connect-form-input" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-block spaced mt-15">
+                                <a href="request-received-successfully.html" class="blue-btn small-width mb-0 mt-0" id="multicard-process-show">Confirm</a>
+                            </div>
+                        </form>
+                    </section>
                 </div>
 
             </div>
@@ -2425,6 +2470,8 @@ $(document).on("click", ".toggle", function(){
             $('.e-sign-button').toggleClass('gray-btn');
             $('.e-sign-button').toggleClass('tick-active');
         });
+
+        
 
             
     });
