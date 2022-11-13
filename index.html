@@ -1154,7 +1154,7 @@
                                 <div class="mumer-heading">
                                     <span class="number-count numeric">2</span><span class="number-count check-img"><img src="img/path-copy.svg" /></span> 
                                     <div class="main-heading-main">
-                                        <div class="main-heading">Select Reason</div> 
+                                        <div class="main-heading">Select a Reason</div> 
                                         <div class="sub-heading"></div>
                                     </div>
                                 </div>
@@ -1166,6 +1166,7 @@
                                             <option value="2">Low credit limit</option>
                                             <option value="3">Billing cycle issues</option>
                                             <option value="4">No offers</option>
+                                            <option value="7">Low Credit Card Usage</option>
                                             <option value="5">Other fees and charges</option>
                                             <option value="6">Other</option>
                                         </select>
@@ -1179,10 +1180,11 @@
                                                     <span class="checkmark"></span>
                                             </label>
                                         </div> -->
-                                        <div class="input-block ">
-                                            <a href="request-received-successfully.html" class="blue-btn">Next</a>
-                                            
-                                        </div>
+                                    </div>
+                                    <div class="input-block ">
+                                        <a href="javascript:void(0);" 
+                                            id="reason-select-button"
+                                            class="blue-btn disabled" onclick="handleStepChange('step2')">Next</a>
                                     </div>
                                 </div>
                             </div>
@@ -1201,19 +1203,19 @@
                                         <div class="add-on-offer-list-wrapper">
                                             <ul class="add-on-offer-list">
                                                 <li>
-                                                    <img src="./img/icon-screenshot.png" alt="">
+                                                    <img src="./img/free.svg" alt="">
                                                     <p>Absolutely free of cost</p>
                                                 </li>
                                                 <li>
-                                                    <img src="./img/icon-screenshot.png" alt="">
-                                                    <p>Share your credit limit with your family</p>
-                                                </li>
-                                                <li>
-                                                    <img src="./img/icon-screenshot.png" alt="">
+                                                    <img src="./img/single-statement.svg" alt="">
                                                     <p>Single statement for all cards</p>
                                                 </li>
                                                 <li>
-                                                    <img src="./img/icon-screenshot.png" alt="">
+                                                    <img src="./img/share-credit.svg" alt="">
+                                                    <p>Share your credit limit with your family</p>
+                                                </li>
+                                                <li>
+                                                    <img src="./img/easy-shopping.svg" alt="">
                                                     <p>Add-on cards makes shopping by your loved ones easy</p>
                                                 </li>
                                             </ul>
@@ -1350,6 +1352,42 @@
                                 </div>
                             </div>
                         </section>
+                        
+                        <section class="main-wrap my-profile border-top step-3-wrapp hidden" id="step3-7">
+
+                            <div class="">
+                                <div class="mumer-heading">
+                                    <span class="number-count numeric">3</span><span class="number-count check-img">
+                                        <img src="img/path-copy.svg" /></span> Card Features and Offers
+                                </div>
+                                <div class="collapse-content  show">
+                                    <div class="reinstatement-content-wrapp card-features-and-offers">
+                                        <p class="gray mb-20">Some of the benefits you get along with your SBI Card Elite include:</p>
+                                        <ul>
+                                            <li>
+                                                Welcome e-Gift Voucher worth ₹5,000 on joining
+                                            </li>
+
+                                            <li>
+                                                Get free movie tickets worth ₹6,000/year
+                                            </li>
+                                            <li>
+                                                Earn upto 50,000 Bonus Reward Points worth ₹12,500/year
+                                            </li>
+                                            <li>
+                                                Complimentary membership to Club Vistara and Trident Privilege
+                                                    Program
+                                            </li>
+                                        </ul>
+                                        <p class="gray mt-20">Explore exiciting offers on your card, <a>view offers here.</a></p>
+                                        <div class="button-block spaced">
+                                            <a href="#" class="blue-btn mb-0 mt-0 ">Continue using card</a>
+                                            <a href="#" class="blue-link mb-0 mt-0 ">Skip</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                         <!-- STEP 4 -->
                         <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step4-3">
 
@@ -1464,14 +1502,36 @@
                                                     </label>
                                                 </div>
                                                 <div class="radio-block">
-                                                    <input type="radio" id="more-radio-5" name="more-offers-radio" value="card-features-and-offers">
-                                                    <label for="more-radio-5" class="card-label">
+                                                    <input type="radio" id="more-radio-6" name="more-offers-radio" value="card-features-and-offers">
+                                                    <label for="more-radio-6" class="card-label">
                                                         <div class="card-radio-header">
                                                             <img src="./img/clock.svg" alt="" srcset="">
                                                             Card Features & Offers
                                                         </div>
                                                         <div class="card-radio-body">
-                                                            <p>Get instant cash and easily fulfill all your needs.</p>
+                                                            <p class="gray">Get instant cash and easily fulfill all your needs.</p>
+                                                            <div class="extra-radio-body">
+                                                                <div class=" card-features-and-offers">
+                                                                    <p class="gray mb-20">Some of the benefits you get along with your SBI Card Elite include:</p>
+                                                                    <ul>
+                                                                        <li>
+                                                                            Welcome e-Gift Voucher worth ₹5,000 on joining
+                                                                        </li>
+                            
+                                                                        <li>
+                                                                            Get free movie tickets worth ₹6,000/year
+                                                                        </li>
+                                                                        <li>
+                                                                            Earn upto 50,000 Bonus Reward Points worth ₹12,500/year
+                                                                        </li>
+                                                                        <li>
+                                                                            Complimentary membership to Club Vistara and Trident Privilege
+                                                                                Program
+                                                                        </li>
+                                                                    </ul>
+                                                                    <p class="gray mt-20">Explore exiciting offers on your card, <a>view offers here.</a></p>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </label>
                                                 </div>
@@ -1713,31 +1773,35 @@
 
             </div>
             <script>
-                // Get the modal
-                var modal = document.getElementById("myModal");
-
-                // Get the button that opens the modal
-                var btn = document.getElementById("myBtn");
-
-                // Get the <span> element that closes the modal
-                var span = document.getElementById("close");
-
-                // When the user clicks on the button, open the modal
-                btn.onclick = function () {
-                    modal.style.display = "block";
-                }
-
-                // When the user clicks on <span> (x), close the modal
-                span.onclick = function () {
-                    modal.style.display = "none";
-                }
-
-                // When the user clicks anywhere outside of the modal, close it
-                window.onclick = function (event) {
-                    if (event.target == modal) {
+                $(document).ready(function(){
+                    // Get the modal
+                    var modal = document.getElementById("myModal");
+    
+                    // Get the button that opens the modal
+                    var btn = document.getElementById("myBtn");
+    
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementById("close");
+    
+                    // When the user clicks on the button, open the modal
+                    if(btn){
+                        btn.onclick = function () {
+                            modal.style.display = "block";
+                        }
+                    }
+    
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function () {
                         modal.style.display = "none";
                     }
-                }
+    
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function (event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                })
             </script>
 
             <a href="#0" class="cd-top" style="display: none;"></a>

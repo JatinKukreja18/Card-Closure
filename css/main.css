@@ -2662,6 +2662,24 @@ hr {
   width: 100%;
 }
 /* Latest changes */
+.radio-buttons-block [type="radio"] + label .extra-radio-body{
+  display: none;
+}
+.radio-buttons-block [type="radio"]:checked + label .extra-radio-body{
+  display: block;
+}
+.card-features-and-offers p.mb-20{
+  margin-bottom: 20px;
+}
+.card-features-and-offers p.mt-10{
+  margin-top: 20px;
+}
+.card-features-and-offers p.mt-40{
+  margin-top: 40px;
+}
+p.gray{
+  color: #666666;
+}
 .connect-modal-form{
   margin-bottom: 0;
 }
@@ -2688,18 +2706,18 @@ ul.add-on-offer-list{
 }
 .add-on-offer-list li{
   list-style-type: none;
-  width: 50%;
+  width: 33.33%;
+  margin-right: 16.66%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   row-gap: 9px;
-  margin-bottom: 60px;
-  text-align: center;
+  margin-bottom: 20px;
   box-sizing: border-box;
   padding: 0 20px;
 }
 .add-on-offer-list li img{
-  width: 70px;
+  width: 50px;
 }
 .others-text,.textarea{
   min-height: 200px;
@@ -2833,6 +2851,10 @@ label.card-label::after{
   padding: 14px 15px;
   border-radius:0 0 9px 9px;
 }
+.card-radio-body p{
+  font-size: 13px;
+  margin-bottom: 10px;
+}
 @media (max-width:767px) {
   ul.add-on-offer-list{
     margin-left: -10px;
@@ -2841,6 +2863,8 @@ label.card-label::after{
   .add-on-offer-list li{
     padding-left: 10px;
     padding-right: 10px;
+    width: calc(41.66% + 20px);
+    margin-right: calc(8.33% - 20px);
   }
   .button-block{
     flex-direction: column;

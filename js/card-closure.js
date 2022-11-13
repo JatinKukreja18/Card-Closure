@@ -50,9 +50,9 @@ for (i = 0; i < l; i++) {
                     switch (this.parentElement.parentElement.id) {
                         case "reason-select":
                             removeOpenedSteps();
-                            showNextStep(this.dataset.next,this.dataset.current);
-                            displaySelection(this.dataset.current,this.innerHTML);
-
+                            document.querySelector('#step2 .select-selected').setAttribute("data-next", this.dataset.next);
+                            document.querySelector('#step2 .select-selected').setAttribute("data-current", 'step2'); 
+                            document.querySelector('#reason-select-button').classList.remove('disabled')                            
                             break;
                         case "new-billing-cycle-select":
                             $('#cycle-change-confirm').removeClass('disabled')
@@ -123,6 +123,9 @@ for (i = 0; i < l; i++) {
 
 function displaySelection(step,selectionText){
     switch (step) {
+        case 'step1':
+            $('.main-wrap#step1 .sub-heading ').text(selectionText)
+            break;
         case 'step2':
             $('.main-wrap#step2 .sub-heading').text(selectionText)
             $('#closure-readon').text(selectionText)
@@ -202,7 +205,20 @@ function handleStepChange(step){
 
     switch (step) {
         case 'step1':
-            showNextStep('step2','step1',$('input[name=card-group]:checked').val() === 'addon')
+            const selectCardType = $('input[name=card-group]:checked').val();
+            showNextStep('step2','step1',selectCardType === 'addon')
+            if(selectCardType === 'addon'){
+                const selectedAddonCard = document.querySelector('#step1 .select-selected');
+                displaySelection("step1","Add On Card: " + selectedAddonCard.innerHTML);
+            }else{
+                // handle card number properly hard coding here
+                displaySelection("step1","Primary Card: " + "XXXX-2345");
+            }
+            break;
+        case 'step2':
+            const selectedReason = document.querySelector('#step2 .select-selected');
+            showNextStep(selectedReason.dataset.next,selectedReason.dataset.current);
+            displaySelection("step2",selectedReason.innerHTML);
             break;
         case 'step3-1':
             // case of Annual Fee Waiver
@@ -226,6 +242,11 @@ function handleStepChange(step){
             // case of other fees and charges
             // show step 4 of more offers
             showNextStep('step4-5','step3-5');            
+            break;
+        case 'step3-7':
+            // case of other fees and charges
+            // show step 4 of more offers
+            showNextStep('step4-7','step3-7');            
             break;
         case 'step4-4':
             // case for step 4 More offers in  "no offers"
