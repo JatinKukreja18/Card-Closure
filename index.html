@@ -1172,7 +1172,10 @@
                                         </select>
                                     </div>
                                     <div class="select-reson-cnt others">
-                                        <textarea placeholder="Please Elaborate" class="others-text"></textarea>
+                                        <textarea placeholder="Please Elaborate" 
+                                        class="others-text"
+                                        onkeyup="javascript: if (this.value.length > 3) {document.querySelector('#reason-select-button').classList.remove('disabled')} else document.querySelector('#reason-select-button').classList.add('disabled')"
+                                        ></textarea>
                                         <!-- <div>
                                             <label class="sbi-input-checkbox">I hereby confirm that I have read the <a href="#">Terms & Conditions</a> and want to proceed with
                                                 the card closure request.
@@ -1245,8 +1248,8 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChange('step3-1')">Avail Offer</a>
-                                            <a href="#" class="blue-link mb-0 mt-0">Skip</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0" >Avail Offer</a>
+                                            <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-1')">Skip</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1270,8 +1273,8 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0 " onclick="handleStepChange('step3-2')">Avail Offer</a>
-                                            <a href="#" class="blue-link mb-0 mt-0" >Skip</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0 " onclick="handleStepChange('step3-2',true)">Avail Offer</a>
+                                            <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-2')">Skip</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1295,8 +1298,8 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChange('step3-3')">Avail Offer</a>
-                                            <a href="#" class="blue-link mb-0 mt-0">Skip</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChange('step3-3',true)">Avail Offer</a>
+                                            <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-3')">Skip</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1320,8 +1323,8 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChange('step3-4')">Avail Offer</a>
-                                            <a href="#" class="blue-link mb-0 mt-0  ">Skip</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0" >Avail Offer</a>
+                                            <a href="#" class="blue-link mb-0 mt-0 " onclick="handleStepChange('step3-4')">Skip</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1345,8 +1348,8 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0 " onclick="handleStepChange('step3-5')">Avail Offer</a>
-                                            <a href="#" class="blue-link mb-0 mt-0 ">Skip</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0 " >Avail Offer</a>
+                                            <a href="#" class="blue-link mb-0 mt-0 " onclick="handleStepChange('step3-5')">Skip</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1536,8 +1539,8 @@
                                                     </label>
                                                 </div>
                                                 <div class="button-block spaced">
-                                                    <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChange('step4-4')">Avail Offer</a>
-                                                    <a href="#" class="blue-link mb-0 mt-0 ">Skip</a>
+                                                    <a href="#" class="blue-btn mb-0 mt-0" >Avail Offer</a>
+                                                    <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step4-4')">Skip</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -1605,9 +1608,12 @@
                                             </div>
 
                                                 <div>
-                                                    <label class="sbi-input-checkbox">I hereby confirm that I have read the <a href="#">Terms & Conditions</a> and want to proceed with
-                                                        the card closure request.
-                                                            <input type="checkbox" id="terms_conditions">
+                                                    <label class="sbi-input-checkbox" for="#terms_conditions">
+                                                        <span>I hereby confirm that I have read the</span>
+                                                        <a href="#">Terms & Conditions</a> 
+                                                        <span>and want to proceed with
+                                                        the card closure request.</span>
+                                                            <input type="checkbox" class="terms_conditions" id="terms_conditions">
                                                             <span class="checkmark"></span>
                                                     </label>
                                                 </div>
@@ -1643,7 +1649,6 @@
                                                     <div class="trans-style d-inline-block m-0 mr-5 fw-semibold text-13">Please Note:</div>
                                                     <ol>
                                                         <li>After your card closure request is processed successfully, you will not be able to make any transactions using this card.</li>
-                                                        <li>Add-on Cards,if any, associated with your primary card will also get closed.</li>
                                                     </ol>
                                                     
                                                 </div>
@@ -1651,8 +1656,9 @@
                                             <form action="" id="terms-form-confirm-4">
 
                                                 <div>
-                                                    <label class="sbi-input-checkbox">I hereby confirm that I have read the <a href="#">Terms & Conditions</a> and want to proceed with
-                                                        the card closure request.
+                                                    <label class="sbi-input-checkbox">
+                                                        <span>I hereby confirm that I have read the</span> <a href="#">Terms & Conditions</a> 
+                                                        <span>and want to proceed with the card closure request.</span>
                                                             <input type="checkbox" onchange="validateForm(this,'terms-form-confirm-4')">
                                                             <span class="checkmark"></span>
                                                     </label>
@@ -1677,7 +1683,10 @@
                                                                                 <p>Please enter the One Time Password (OTP) that has been sent on your mobile number XXXXXX7024 and email ID: PSXXXX@GMAIL.COM. If you have not received the OTP, click Resend OTP.</p>
                                                                                 <div class="otp-block">
                                                                                     <label>Enter OTP<span class="red-text">*</span></label>
-                                                                                    <input type="number">
+                                                                                    <input 
+                                                                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                                                    type = "number"
+                                                                                    maxlength = "6">
                                                                                     <a href="#" class="input-blue-text">Resend OTP</a>
                                                                                 </div>
                                                                                 <div class="otp-submit-block">
@@ -1714,7 +1723,7 @@
                         <h2 class="modal-title">We would like to connect with you</h2>
                         <p>Would you like to select a preferred time slot for us to connect with you?</p>
                     </div>
-                    <div class="close">X</div>
+                    <div class="close" onclick="$('#connect-modal').hide();">X</div>
                     <section class="content text-center">		
                         <form class="connect-modal-form">
                             <div class="form-group align-items-center mt-0">
@@ -1876,7 +1885,12 @@ $(document).on("click", ".toggle", function(){
         </script>
        <script>
             $(document).ready(function () {
-			
+                $("input[type=number]").on("keydown", function(e) {
+                        var invalidChars = ["-", "+", "e"]; //include "." if you only want integers
+                        if (invalidChars.includes(e.key)) {
+                            e.preventDefault();
+                        }
+                });
 			
 				$('.otp-form').on('submit', function() {
                                     $("#myModal").hide();
@@ -2530,7 +2544,7 @@ $(document).on("click", ".toggle", function(){
         //     $('.btn-radio-block').removeClass('gray-btn');
         // });
 
-        $('#terms_conditions').click(function() {
+        $('.terms_conditions').click(function() {
             $('.e-sign-button').toggleClass('gray-btn');
             $('.e-sign-button').toggleClass('tick-active');
         });

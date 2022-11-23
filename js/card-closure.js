@@ -165,6 +165,7 @@ function showNextStep(nextStep,currentStep,isAddon) {
     // hide current Step if it exists
     // expect when others i,e. step3-6 is chosen
     if(nextStep == "step3-6"){
+        document.querySelector('#reason-select-button').classList.add('disabled')
         $('.select-reson-cnt.others').show();
         return;
     }
@@ -200,8 +201,8 @@ function validateForm(el,formId){
     }
 }
 
-function handleStepChange(step){
-    // based on where the avail offer is clicked from, called different functions/process
+function handleStepChange(step,isAvail){
+    // based on where the avail or skip is clicked from, called different functions/process
 
     switch (step) {
         case 'step1':
@@ -226,12 +227,19 @@ function handleStepChange(step){
             break;
         case 'step3-2':
             // case of Low Credit Limit
-            $('#redirect-modal').show();
+            if(isAvail){
+                $('#redirect-modal').show();
+                break;
+            }
+            showNextStep('step4-4','step3-2');
             break;            
         case 'step3-3':
+            if(isAvail){
+                showNextStep('step4-3','step3-3');
+                break
+            }
+                showNextStep('step4-4','step3-3');
             // case of Change Billing Cycle
-            // show step 4 of more offers
-            showNextStep('step4-3','step3-3');
             break;
         case 'step3-4':
             // case of no Offers
