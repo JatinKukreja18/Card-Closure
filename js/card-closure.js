@@ -156,6 +156,11 @@ function showNextStep(nextStep,currentStep,isAddon) {
             $('#step3-addon').removeClass('hidden');
             $('#step3-addon').addClass('active');
             $('#step3-addon').find(".mumer-heading").addClass("toggle");
+            if(currentStep){
+                $('.main-wrap.my-profile#'+currentStep).addClass('filled');    
+                $('.main-wrap.my-profile#'+currentStep).removeClass('active');
+                $('.select-reson-cnt.others').hide();    
+            }
             return
         }else{
             $('.main-wrap.step-3-wrapp.active').addClass('hidden');
