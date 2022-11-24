@@ -675,7 +675,7 @@ input[type="range"] + .thumb.active .value {
   margin-top: 12px;
   font-size: 12px;
   line-height: 1.83;
-  color: #7f7f7f;
+  color: #333;
 }
 a.underlined{
   text-decoration: underline;
@@ -925,6 +925,7 @@ span.outstanding.price-indication {
   line-height: 18px;
   font-weight: 400;
   color: #2d2d2d;
+  text-transform: capitalize;
   padding: 10px 9px;
   box-sizing: border-box;
   height: 40px;
@@ -2665,7 +2666,7 @@ hr {
 }
 
 .select-reson-cnt .message-seccess-view p {
-  color: #222222;
+  color: #333;
 }
 
 .sbi-input-checkbox input {
@@ -2812,6 +2813,7 @@ p.big-para{
 .offer-card .offer-image{
   position: relative;  
   max-width: 100%;
+  width: 100%;
 }
 .offer-card .offer-content-box{
   position: relative;  
