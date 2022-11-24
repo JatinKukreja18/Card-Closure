@@ -159,11 +159,10 @@ a:hover {
 }
 @media (max-width: 767px) {
   .custom-modal .modal-content {
-    margin: 35% auto;
+    margin: auto;
     max-width: 90%;
-  }
-  .custom-modal .modal-content {
-    border: 24px solid #fff;
+    border: 12px solid #fff;
+    padding: 20px;
   }
   .left-heading-viw {
     width: 100%;
@@ -293,6 +292,7 @@ span.number-count {
   background-color: #0095da;
   font-size: 14px;
   font-weight: 600;
+  font-weight: bold;
   text-align: center;
   color: #ffffff;
   padding: 11px 15px;
@@ -926,7 +926,7 @@ span.outstanding.price-indication {
   font-weight: 400;
   color: #2d2d2d;
   text-transform: capitalize;
-  padding: 10px 9px;
+  padding: 10px 20px;
   box-sizing: border-box;
   height: 40px;
   /* background: #fbfbfb; */
@@ -2466,6 +2466,7 @@ input[type="number"] {
 .blue-link {
   font-size: 13px;
   color: #0095d9;
+  font-weight: 600;
 }
 .gray-block p {
   margin: 0;
@@ -2673,6 +2674,11 @@ hr {
   width: 100%;
 }
 /* Latest changes */
+.bottom-spacer{
+  margin-top: 59px;
+  height: 1px;
+  width: 100%;
+}
 .radio-buttons-block [type="radio"] + label .extra-radio-body{
   display: none;
 }
@@ -2740,6 +2746,7 @@ ul.add-on-offer-list{
   font-size: 14px;
   font-weight: 400;
   max-width: 100%;
+  -webkit-appearance: none;
 }
 input.connect-form-input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
@@ -2774,7 +2781,7 @@ input[disabled].disabled-select{
   width: auto;
   min-width: 300px;
   box-sizing: border-box;
-  padding: 10px 9px;
+  padding: 10px 20px;
   height: 40px;
 }
 .horizontal-select{

@@ -25,7 +25,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css">
 
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-        <script src="js/card-closure.js"></script>
+
     </head>
     <body onunload="" class="overlay-opened">
         <!--[if lt IE 9]>
@@ -1102,659 +1102,23 @@
                         
                     </div>
                     <section class="multicard-process min-h-100vh">
-                        <section class="main-wrap my-profile active card-closure-wrapp-first-block" id="step1">
+                        <section class="main-wrap my-profile active">
 
-                            <div class="">
-                                <div class="mumer-heading">
-                                <span class="number-count numeric">1</span><span class="number-count check-img"><img src="img/path-copy.svg" /></span> 
-                                <div class="main-heading-main">
-                                    <div class="main-heading">Select Card</div> 
-                                    <div class="sub-heading">Primary Card: XXXX-2345</div>
-                                </div>
-                            </div>
-                                <div class="collapse-content reinstatement-content-wrapp">
-                                    
-                                    <div class="rec-radio-block-wrapp">
-                                        <div class="radio-buttons-block">
-                                            <div class="radio-block">
-                                                <input type="radio" id="radio_1" name="card-group" value="primary" checked>
-                                                <label for="radio_1">
-                                                    <span>
-                                                        Primary Card  XXXX-XXXX-XXXX-1234
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="radio-block with-custom-select">
-                                                <div>
-                                                    <input type="radio" id="radio_2" name="card-group" value="addon">
-                                                <label for="radio_2">
-                                                        <span>Add-on Card</span>
-                                                </label>
-                                                </div>
-                                                <div class="form-control custom-select  custom-select1">
-                                                    <select  id="add-type" name="add-type" class="form-control add-type" >
-                                                        <option value="0">Select</option>
-                                                        <option value="1">XXXX-XXXX-XXXX-2341</option>
-                                                        <option value="2">XXXX-XXXX-XXXX-2342</option>
-                                                        <option value="3">XXXX-XXXX-XXXX-2343</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="button-block">
-                                        <a href="#" class="blue-btn mb-0 mt-0 btn-radio-block" onclick="handleStepChange('step1')">Next</a>
-                                    </div>
-                            </div>
-
-                        </section>
-                        <section class="main-wrap my-profile border-top select-reason-wrapp" id="step2">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">2</span><span class="number-count check-img"><img src="img/path-copy.svg" /></span> 
-                                    <div class="main-heading-main">
-                                        <div class="main-heading">Select a Reason</div> 
-                                        <div class="sub-heading"></div>
-                                    </div>
-                                </div>
-                                <div class="collapse-content reinstatement-content-wrapp">
-                                    <div class="form-control custom-select custom-select-reusable" id="reason-select">
-                                        <select  id="add-type" name="add-type" class="form-control add-type" >
-                                            <option value="0">Select</option>
-                                            <option value="1">Annual fee</option>
-                                            <option value="2">Low credit limit</option>
-                                            <option value="3">Billing cycle issues</option>
-                                            <option value="4">No offers</option>
-                                            <option value="7">Low Credit Card Usage</option>
-                                            <option value="5">Other fees and charges</option>
-                                            <option value="6">Other</option>
-                                        </select>
-                                    </div>
-                                    <div class="select-reson-cnt others">
-                                        <textarea placeholder="Please Elaborate" 
-                                        class="others-text"
-                                        onkeyup="javascript: if (this.value.length > 3) {document.querySelector('#reason-select-button').classList.remove('disabled')} else document.querySelector('#reason-select-button').classList.add('disabled')"
-                                        ></textarea>
-                                        <!-- <div>
-                                            <label class="sbi-input-checkbox">I hereby confirm that I have read the <a href="#">Terms & Conditions</a> and want to proceed with
-                                                the card closure request.
-                                                    <input type="checkbox" id="terms_conditions">
-                                                    <span class="checkmark"></span>
-                                            </label>
-                                        </div> -->
-                                    </div>
-                                    <div class="input-block ">
-                                        <a href="javascript:void(0);" 
-                                            id="reason-select-button"
-                                            class="blue-btn disabled" onclick="handleStepChange('step2')">Next</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </section>
-                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step3-addon">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">3</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> Benefits of Add On Card
-                                </div>
-                                <div class="collapse-content ">
-                                    <div class="reinstatement-content-wrapp">
-                                        <p class="mb-10">Do you know, you can do so much with your Add-on card:</p>
-                                        <div class="add-on-offer-list-wrapper">
-                                            <ul class="add-on-offer-list">
-                                                <li>
-                                                    <img src="./img/free.svg" alt="">
-                                                    <p>Absolutely free of cost</p>
-                                                </li>
-                                                <li>
-                                                    <img src="./img/single-statement.svg" alt="">
-                                                    <p>Single statement for all cards</p>
-                                                </li>
-                                                <li>
-                                                    <img src="./img/share-credit.svg" alt="">
-                                                    <p>Share your credit limit with your family</p>
-                                                </li>
-                                                <li>
-                                                    <img src="./img/easy-shopping.svg" alt="">
-                                                    <p>Add-on cards makes shopping by your loved ones easy</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="button-block spaced">
-                                            <a href="javascript:void(0);" class="blue-btn mb-0 mt-0" >Continue using card</a>
-                                            <a href="javascript:void(0);" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-addon')">Skip</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="main-wrap my-profile border-top step-3-wrapp  hidden" id="step3-1">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">3</span><span class="number-count check-img"><img src="img/path-copy.svg" /></span> Personalized Offers
-                                </div>
-                                <div class="collapse-content ">
-                                    <div class="reinstatement-content-wrapp">
-                                        <p>We are sad to see you go, here are some benefits that might interest you:</p>
-                                        <div class="offer-card">
-                                            <img src="./img/offer.png" alt="" class="offer-image">
-                                            <div class="offer-content-box">
-                                                <h4 class="bold-para">Annual Fee Waiver</h2>
-                                                <p>Get instant cash and easily fulfill all your needs.</p>
-                                            </div>
-                                        </div>
-                                        <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0" >Avail Offer</a>
-                                            <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-1')">Skip</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="main-wrap my-profile border-top step-3-wrapp  hidden" id="step3-2">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">3</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> Personalized Offers
-                                </div>
-                                <div class="collapse-content ">
-                                    <div class="reinstatement-content-wrapp">
-                                        <p>We are sad to see you go, here are some benefits that might interest you:</p>
-                                        <div class="offer-card">
-                                            <img src="./img/offer.png" alt="" class="offer-image">
-                                            <div class="offer-content-box">
-                                                <h4 class="bold-para">Increase Credit Limit</h2>
-                                                <p>Get instant cash and easily fulfill all your needs.</p>
-                                            </div>
-                                        </div>
-                                        <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0 " onclick="handleStepChange('step3-2',true)">Avail Offer</a>
-                                            <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-2')">Skip</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="main-wrap my-profile border-top step-3-wrapp  hidden" id="step3-3">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">3</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> Personalized Offers
-                                </div>
-                                <div class="collapse-content ">
-                                    <div class="reinstatement-content-wrapp">
-                                        <p>We are sad to see you go, here are some benefits that might interest you:</p>
-                                        <div class="offer-card">
-                                            <img src="./img/offer.png" alt="" class="offer-image">
-                                            <div class="offer-content-box">
-                                                <h4 class="bold-para">Change Billing Cycle</h2>
-                                                <p>Get instant cash and easily fulfill all your needs.</p>
-                                            </div>
-                                        </div>
-                                        <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChange('step3-3',true)">Avail Offer</a>
-                                            <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-3')">Skip</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="main-wrap my-profile border-top step-3-wrapp  hidden" id="step3-4">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">3</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> Personalized Offers
-                                </div>
-                                <div class="collapse-content ">
-                                    <div class="reinstatement-content-wrapp">
-                                        <p>We are sad to see you go, here are some benefits that might interest you:</p>
-                                        <div class="offer-card">
-                                            <img src="./img/offer.png" alt="" class="offer-image">
-                                            <div class="offer-content-box">
-                                                <h4 class="bold-para">Annual Fee Waiver</h2>
-                                                <p>Get instant cash and easily fulfill all your needs.</p>
-                                            </div>
-                                        </div>
-                                        <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0" >Avail Offer</a>
-                                            <a href="#" class="blue-link mb-0 mt-0 " onclick="handleStepChange('step3-4')">Skip</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="main-wrap my-profile border-top step-3-wrapp  hidden" id="step3-5">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">3</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> Personalized Offers
-                                </div>
-                                <div class="collapse-content ">
-                                    <div class="reinstatement-content-wrapp">
-                                        <p>We are sad to see you go, here are some benefits that might interest you:</p>
-                                        <div class="offer-card">
-                                            <img src="./img/offer.png" alt="" class="offer-image">
-                                            <div class="offer-content-box">
-                                                <h4 class="bold-para">Request for Fee Waiver</h2>
-                                                <p>Get instant cash and easily fulfill all your needs.</p>
-                                            </div>
-                                        </div>
-                                        <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0 " onclick="handleStepChange('step3-5',true)">Avail Offer</a>
-                                            <a href="#" class="blue-link mb-0 mt-0 " onclick="handleStepChange('step3-5')">Skip</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        
-                        <section class="main-wrap my-profile border-top step-3-wrapp hidden" id="step3-7">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">3</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> Card Features and Offers
-                                </div>
-                                <div class="collapse-content  show">
-                                    <div class="reinstatement-content-wrapp card-features-and-offers">
-                                        <p class="gray mb-20">Some of the benefits you get along with your SBI Card Elite include:</p>
-                                        <ul>
-                                            <li>
-                                                Welcome e-Gift Voucher worth ₹5,000 on joining
-                                            </li>
-
-                                            <li>
-                                                Get free movie tickets worth ₹6,000/year
-                                            </li>
-                                            <li>
-                                                Earn upto 50,000 Bonus Reward Points worth ₹12,500/year
-                                            </li>
-                                            <li>
-                                                Complimentary membership to Club Vistara and Trident Privilege
-                                                    Program
-                                            </li>
-                                        </ul>
-                                        <p class="gray mt-20">Explore exiciting offers on your card, <a>view offers here.</a></p>
-                                        <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0 ">Continue using card</a>
-                                            <a href="#" class="blue-link mb-0 mt-0 ">Skip</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- STEP 4 -->
-                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step4-3">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">4</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> Change Billing Cycle
-                                </div>
-                                <div class="collapse-content ">
-                                    <div class="reinstatement-content-wrapp">
-                                        <div class="horizontal-select">
-                                            <label for="cb-select">Current Billing Cycle</label>
-                                            <div class="form-control" >
-                                                <input type="text" class="disabled-select" disabled value="8th of every month"/>
-                                            </div>
-                                        </div>
-                                        <div class="horizontal-select">
-                                            <label for="nb-select">New Billing Cycle</label>
-                                            <div class="form-control custom-select custom-select-reusable" id="new-billing-cycle-select">                                            
-                                                <select id="nb-select" name="nb-select" class="form-control nb-select">
-                                                    <option value="01">1st of every month</option>
-                                                    <option value="02">2nd of every month</option>
-                                                    <option value="03">3rd of every month</option>
-                                                    <option value="07">7th of every month</option>
-                                                    <option value="11">11th of every month</option>
-                                                    <option value="14">14th of every month</option>
-                                                    <option value="21">21st of every month</option>
-                                                    <option value="24">24th of every month</option>
-                                                    <option value="27">27th of every month</option>
-                                                    <option value="30">30th of every month</option>
-                                                </select>
+                            <div class="card-view-holder message-seccess-view">
+                                            <div class="list-container-selectbox flex-row align-item-center cong-message">
+                                                <h3 class="trans-style d-inline-block m-0 mr-5">Request Received Successfully</h3>
+                                                <p>We have received your request for closure of your add-on credit card ending 2345.</p>
+                                                <p class="big-para">Your Service Request Number is <span class="black">12345678</span></p>
+                                                <p>Your request will be processed within 7 days. Please <a class="underlined" href="#">click here</a> to track the status of your request. <br>
+                                                    We have also sent you an SMS on xxxxxxx2300 with service request details.</p>
                                             </div>
                                         </div>
 
-                                        <div class="input-block tick-buttons-block">
-                                            <a href="success-sr-billing.html" id="cycle-change-confirm" class="blue-btn disabled">Confirm</a>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step4-4">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">4</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> Other Offers
-                                </div>
-                                <div class="collapse-content ">
-                                    <div class="reinstatement-content-wrapp">
-                                        <div class="offers-radio-block-wrapp">
-                                            <div class="radio-buttons-block">
-                                                <div class="radio-block">
-                                                    <input type="radio" id="more-radio-1" name="more-offers-radio" value="annual-fee-waiver">
-                                                    <label for="more-radio-1" class="card-label">
-                                                        <div class="card-radio-header">
-                                                            <img src="./img/clock.svg" alt="" srcset="">
-                                                            Annual Fee Waiver
-                                                        </div>
-                                                        <div class="card-radio-body">
-                                                            <p>Get instant cash and easily fulfill all your needs.</p>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                                <div class="radio-block">
-                                                    <input type="radio" id="more-radio-2" name="more-offers-radio" value="fee-reversal">
-                                                    <label for="more-radio-2" class="card-label">
-                                                        <div class="card-radio-header">
-                                                            <img src="./img/clock.svg" alt="" srcset="">
-                                                            Fee Reversal
-                                                        </div>
-                                                        <div class="card-radio-body">
-                                                            <p>Get instant cash and easily fulfill all your needs.</p>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                                <div class="radio-block">
-                                                    <input type="radio" id="more-radio-3" name="more-offers-radio" value="credit-limit-increase">
-                                                    <label for="more-radio-3" class="card-label">
-                                                        <div class="card-radio-header">
-                                                            <img src="./img/clock.svg" alt="" srcset="">
-                                                            Credit Limit Increase
-                                                        </div>
-                                                        <div class="card-radio-body">
-                                                            <p>Get instant cash and easily fulfill all your needs.</p>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                                <div class="radio-block">
-                                                    <input type="radio" id="more-radio-4" name="more-offers-radio" value="get-reward-points" >
-                                                    <label for="more-radio-4" class="card-label">
-                                                        <div class="card-radio-header">
-                                                            <img src="./img/clock.svg" alt="" srcset="">
-                                                            Get Reward Points
-                                                        </div>
-                                                        <div class="card-radio-body">
-                                                            <p>Get instant cash and easily fulfill all your needs.</p>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                                <div class="radio-block">
-                                                    <input type="radio" id="more-radio-5" name="more-offers-radio" value="change-billing-cycle" >
-                                                    <label for="more-radio-5" class="card-label">
-                                                        <div class="card-radio-header">
-                                                            <img src="./img/clock.svg" alt="" srcset="">
-                                                            Change Billing Cycle
-                                                        </div>
-                                                        <div class="card-radio-body">
-                                                            <p>Get instant cash and easily fulfill all your needs.</p>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                                <div class="radio-block">
-                                                    <input type="radio" id="more-radio-6" name="more-offers-radio" value="card-features-and-offers">
-                                                    <label for="more-radio-6" class="card-label">
-                                                        <div class="card-radio-header">
-                                                            <img src="./img/clock.svg" alt="" srcset="">
-                                                            Card Features & Offers
-                                                        </div>
-                                                        <div class="card-radio-body">
-                                                            <p class="gray">Get instant cash and easily fulfill all your needs.</p>
-                                                            <div class="extra-radio-body">
-                                                                <div class=" card-features-and-offers">
-                                                                    <p class="gray mb-20">Some of the benefits you get along with your SBI Card Elite include:</p>
-                                                                    <ul>
-                                                                        <li>
-                                                                            Welcome e-Gift Voucher worth ₹5,000 on joining
-                                                                        </li>
-                            
-                                                                        <li>
-                                                                            Get free movie tickets worth ₹6,000/year
-                                                                        </li>
-                                                                        <li>
-                                                                            Earn upto 50,000 Bonus Reward Points worth ₹12,500/year
-                                                                        </li>
-                                                                        <li>
-                                                                            Complimentary membership to Club Vistara and Trident Privilege
-                                                                                Program
-                                                                        </li>
-                                                                    </ul>
-                                                                    <p class="gray mt-20">Explore exiciting offers on your card, <a>view offers here.</a></p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                                <div class="button-block spaced">
-                                                    <a href="#" class="blue-btn mb-0 mt-0" >Avail Offer</a>
-                                                    <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step4-4')">Skip</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step4-5">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">4</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> Request for Fee Waiver
-                                </div>
-                                <div class="collapse-content ">
-                                    <div class="reinstatement-content-wrapp">
-                                        
-                                        <div class="form-control custom-select custom-select-reusable is70" id="fee-waiver-select">                                            
-                                            <select id="fw-select" name="fw-select" class="form-control fw-select">
-                                                <option value="">Select a request</option>
-                                                <option value="Late Payment Fee">Late Payment Fee</option>
-                                                <option value="Overlimit charges">Overlimit charges</option>
-                                                <option value="Cash advance charges">Cash advance charges</option>
-                                                <option value="Interest charges">Interest charges</option>
-                                                <option value="Foreign transaction Fee">Foreign transaction Fee</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="input-block mt-15">
-                                            <a href="success-sr-fees.html" id="fee-waiver-confirm" class="blue-btn disabled">Next</a>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- STEP CONFIRM -->
-                        <section class="main-wrap my-profile border-top step-5-wrapp hidden" id="step5">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">5</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> 
-                                    <div class="main-heading-main">
-                                        <div class="main-heading">Confirm</div> 
-                                        <div class="sub-heading visible">Please review your request:</div>
-                                    </div>
-                                </div>
-                                <div class="collapse-content ">
-                                    <div class="reinstatement-content-wrapp">
-                                        <div class="closure-reason">
-                                            <b>Reason for closing card: XXX XXX-2345</b>
-                                            <p id="closure-readon"></p>
-                                        </div>
-                                        <div class="">
-                                            <div class="card-view-holder message-seccess-view">
-                                                <div class="list-container-selectbox flex-row align-item-center cong-message">
-                                                    <div class="trans-style d-inline-block m-0 mr-5 fw-semibold text-13">Please Note:</div>
-                                                    <ol>
-                                                        <li>After your card closure request is processed successfully, you will not be able to make any transactions using this card.</li>
-                                                        <li>Add-on Cards, if any, associated with your primary card will also get closed.</li>
-                                                    </ol>
-                                                    
-                                                </div>
-                                            </div>
-
-                                                <div>
-                                                    <label class="sbi-input-checkbox terms_conditions" for="terms_conditions">
-                                                        <span>I hereby confirm that I have read the</span>
-                                                        <a href="#">Terms & Conditions</a> 
-                                                        <span>and want to proceed with
-                                                        the card closure request.</span>
-                                                            <input type="checkbox"  id="terms_conditions" onchange="termsCheckboxChange(this)">
-                                                            <span class="checkmark"></span>
-                                                    </label>
-                                                </div>
-                                                <div class="input-block tick-buttons-block">
-                                                    <a href="javascript:void(0);" class="disabled blue-btn e-sign-button"  onclick="tickActive();">Submit</a>
-                                                    <a href="#" class="step-2 blue-btn mb-0 gray-btn">Cancel</a>
-                                                </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="main-wrap my-profile border-top step-5-wrapp  hidden" id="step4-addon">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">4</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> 
-                                    <div class="main-heading-main">
-                                        <div class="main-heading">Confirm</div> 
-                                        <div class="sub-heading visible">Please review your request:</div>
-                                    </div>
-                                </div>
-                                <div class="collapse-content ">
-                                    <div class="reinstatement-content-wrapp">
-                                        <div class="closure-reason">
-                                            <b>Reason for closing card: XXX XXX-2345</b>
-                                            <p id="closure-readon"></p>
-                                        </div>
-                                        <div class="">
-                                            <div class="card-view-holder message-seccess-view">
-                                                <div class="list-container-selectbox flex-row align-item-center cong-message">
-                                                    <div class="trans-style d-inline-block m-0 mr-5 fw-semibold text-13">Please Note:</div>
-                                                    <ol>
-                                                        <li>After your card closure request is processed successfully, you will not be able to make any transactions using this card.</li>
-                                                    </ol>
-                                                    
-                                                </div>
-                                            </div>
-                                            <form action="" id="terms-form-confirm-4">
-
-                                                <div>
-                                                    <label class="sbi-input-checkbox">
-                                                        <span>I hereby confirm that I have read the</span> <a href="#">Terms & Conditions</a> 
-                                                        <span>and want to proceed with the card closure request.</span>
-                                                            <input type="checkbox" onchange="termsCheckboxChange(this)">
-                                                            <span class="checkmark"></span>
-                                                    </label>
-                                                </div>
-                                                <div class="input-block tick-buttons-block">
-                                                    <a href="javascript:void(0);" class="blue-btn disabled e-sign-button" onclick="tickActive();">Submit</a>
-                                                    <a href="#" class="step-2 blue-btn mb-0 gray-btn">Cancel</a>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        
-                        <section class="main-wrap my-profile border-top gray-otp-wrapp">
-                            <div class="reinstatement-content-wrapp">
-                                <div class="gray-block">
-                                    <div class="card-view-holder message-seccess-view">
-                                                                            <div class="list-container-selectbox flex-row align-item-center cong-message">
-                                                                                <h2 class="trans-style d-inline-block m-0 mr-5">Enter One-Time Password</h2>
-                                                                                <p>Please enter the One Time Password (OTP) that has been sent on your mobile number XXXXXX7024 and email ID: PSXXXX@GMAIL.COM. If you have not received the OTP, click Resend OTP.</p>
-                                                                                <div class="otp-block">
-                                                                                    <label>Enter OTP<span class="red-text">*</span></label>
-                                                                                    <input 
-                                                                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                                                                    type = "number"
-                                                                                    maxlength = "6">
-                                                                                    <a href="#" class="input-blue-text">Resend OTP</a>
-                                                                                </div>
-                                                                                <div class="otp-submit-block">
-                                                                                    <!-- <a href="request-received-successfully.html" class="step-2 blue-btn mb-0">Submit</a> -->
-                                                                                    <a href="javascript:void(0);" onclick="$('#connect-modal').show();" class="step-2 blue-btn mb-0">Submit</a>
-                                                                                    <a href="#" class="step-2 blue-btn gray-btn mb-0">Cancel</a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                </div>
-                            </div>
-                            
-                        </section>
+</section>
                     </section>
                 </div>
             </div>  	  
-            <div id="redirect-modal" class="modal custom-modal">
 
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <div class="modal-header"><h2 class="modal-title">You will be redirected to the Credit Limit Increase journey.</h2></div>
-                    <div class="button-block spaced mt-15">
-                        <a href="request-received-successfully.html" class="blue-btn small-width mb-0 mt-0" id="multicard-process-show">Okay</a>
-                        <a href="javascript:void(0);" class="blue-btn small-width  gray-btn" onclick="$('#redirect-modal').hide();" >Cancel</a>
-                    </div>
-                </div>
-
-            </div>
-            <div id="connect-modal" class="modal custom-modal">
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title">We would like to connect with you</h2>
-                        <p>Would you like to select a preferred time slot for us to connect with you?</p>
-                    </div>
-                    <div class="close" onclick="$('#connect-modal').hide();">X</div>
-                    <section class="content text-center">		
-                        <form class="connect-modal-form">
-                            <div class="form-group align-items-center mt-0">
-                                <div class="col-md-12">
-                                    <div class="form-control mb-10">
-                                        <!-- replace this with suitable datepicker -->
-                                        <input type="date" placeholder="Select Date" class="form-control connect-form-input" >
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-control mb-10">
-                                        <!-- replace this with suitable dropdown -->
-                                        <input type="text" placeholder="Select Time" class="form-control connect-form-input" >
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-control mb-10">
-                                        <!-- replace this with suitable dropdown -->
-                                        <input type="text"  placeholder="Select Language" class="form-control connect-form-input" >
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="button-block spaced mt-15">
-                                
-                                <a href="#" onclick="redirectToClosure()" class="blue-btn small-width mb-0 mt-0" id="multicard-process-show">Confirm</a>
-                            </div>
-                        </form>
-                    </section>
-                    <div class="bottom-spacer"></div>
-                </div>
-            </div>
             <div id="myModal" class="modal custom-modal">
 
                 <!-- Modal content -->
@@ -1773,7 +1137,7 @@
                                 </div>
                             </div>
                             <div class="mt-15 align-items-center text-center">
-                                <div> <a href="request-received-successfully.html" class="blue-btn small-width mb-0" id="multicard-process-show">Submit</a></div>
+                                <div> <a href="#hide-on-e-card" class="blue-btn small-width mb-0" id="multicard-process-show">Submit</a></div>
                                 <div class="mt-10"><a href="javascript:void(0);" class="" >Resend OTP</a></div>
                             </div>
 
@@ -1783,35 +1147,31 @@
 
             </div>
             <script>
-                $(document).ready(function(){
-                    // Get the modal
-                    var modal = document.getElementById("myModal");
-    
-                    // Get the button that opens the modal
-                    var btn = document.getElementById("myBtn");
-    
-                    // Get the <span> element that closes the modal
-                    var span = document.getElementById("close");
-    
-                    // When the user clicks on the button, open the modal
-                    if(btn){
-                        btn.onclick = function () {
-                            modal.style.display = "block";
-                        }
-                    }
-    
-                    // When the user clicks on <span> (x), close the modal
-                    span.onclick = function () {
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementById("close");
+
+                // When the user clicks on the button, open the modal
+                btn.onclick = function () {
+                    modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
                         modal.style.display = "none";
                     }
-    
-                    // When the user clicks anywhere outside of the modal, close it
-                    window.onclick = function (event) {
-                        if (event.target == modal) {
-                            modal.style.display = "none";
-                        }
-                    }
-                })
+                }
             </script>
 
             <a href="#0" class="cd-top" style="display: none;"></a>
@@ -1847,14 +1207,13 @@
                                 if (window.pageYOffset >= scroll) {
                                     // alert('hello');
 
-                                    // Hiding as it is giving errors
-                                    // document.querySelector(".slideBack").classList.add("showSlide");
-                                    // document.querySelector(".scrollDown").classList.add("hideScrollText");
-                                    //document.querySelector(".slideCont .frontCard").classList.add("hideFront");
+                                    document.querySelector(".slideBack").classList.add("showSlide");
+                                    document.querySelector(".scrollDown").classList.add("hideScrollText");
+                                    document.querySelector(".slideCont .frontCard").classList.add("hideFront");
                                 } else {
-                                    // document.querySelector(".slideBack").classList.remove("showSlide");
-                                    // document.querySelector(".scrollDown").classList.remove("hideScrollText");
-                                    //document.querySelector(".slideCont .frontCard").classList.remove("hideFront");
+                                    document.querySelector(".slideBack").classList.remove("showSlide");
+                                    document.querySelector(".scrollDown").classList.remove("hideScrollText");
+                                    document.querySelector(".slideCont .frontCard").classList.remove("hideFront");
                                 }
                             }
                         }
@@ -1886,12 +1245,7 @@ $(document).on("click", ".toggle", function(){
         </script>
        <script>
             $(document).ready(function () {
-                $("input[type=number]").on("keydown", function(e) {
-                        var invalidChars = ["-", "+", "e"]; //include "." if you only want integers
-                        if (invalidChars.includes(e.key)) {
-                            e.preventDefault();
-                        }
-                });
+			
 			
 				$('.otp-form').on('submit', function() {
                                     $("#myModal").hide();
@@ -1990,37 +1344,22 @@ $(document).on("click", ".toggle", function(){
                     $('.gray-otp-wrapp').show();
                     $(this).hide();
                 });
-                // function showNextStep(step){
-                //     console.log(step);
-                // }
-                // STEP CHANGE COMMON FUNCTION
-                // $(".stepChangeTrigger").click(function () {
-                //     console.log(this.dataset.href);
-                //     const nextStep = this.dataset.href;
-                //     $(this).parents(".main-wrap.my-profile").removeClass("active");
-                //     $(this).parents(".main-wrap.my-profile").addClass("filled");   
-                //     $(this).parents(".main-wrap.my-profile").find(".mumer-heading").addClass("toggle");
-                //     switch (nextStep) {
-                //         case 'step2':
-                //             $(".main-wrap.my-profile#step2").addClass("active");      
-                //             break;
-                    
-                //         default:
-                //             break;
-                //     }
-                //     // $(this).parents(".main-wrap.my-profile").removeClass("active");                              
-                                         
-                    
-                //     // $(this).parents(".main-wrap.my-profile").siblings("#step2").addClass("active");     
-                //     var target = $(this.hash);
-                //     target = target.length ? target : $('#' + nextStep);
-                //     if (target.length) {
-                //         $('html,body').animate({
-                //             scrollTop: (target.offset().top - 110)
-                //         });
-                //         return false;
-                //     }
-                // });
+	
+
+                            $(".step2").click(function () {
+                                $(this).parents(".main-wrap.my-profile").removeClass("active");                              
+                                $(this).parents(".main-wrap.my-profile").addClass("filled");                              
+                                $(this).parents(".main-wrap.my-profile").find(".mumer-heading").addClass("toggle");                              
+                                $(this).parents(".main-wrap.my-profile").siblings("#step2").addClass("active");     
+                                var target = $(this.hash);
+                                target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+                                if (target.length) {
+                                    $('html,body').animate({
+                                      scrollTop: (target.offset().top - 110)
+                                    });
+                                    return false;
+                                }
+                            });
                             $(".step-2").click(function () {
                                 var target = $(this.hash);
                                 target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
@@ -2518,7 +1857,91 @@ $(document).on("click", ".toggle", function(){
                          then close all select boxes: */
                         document.addEventListener("click", closeAllSelect);
                     </script>
-                    
+                    <script>
+                        //            =========Custom Select box ===============================
+                                    var x, i, j, l, ll, selElmnt, a, b, c;
+                                    /* Look for any elements with the class "custom-select": */
+                                    x = document.getElementsByClassName("custom-select2");
+                                    l = x.length;
+                                    for (i = 0; i < l; i++) {
+                                        selElmnt = x[i].getElementsByTagName("select")[0];
+                                        ll = selElmnt.length;
+                                        /* For each element, create a new DIV that will act as the selected item: */
+                                        a = document.createElement("DIV");
+                                        a.setAttribute("class", "select-selected");
+                                        a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+                                        x[i].appendChild(a);
+                                        /* For each element, create a new DIV that will contain the option list: */
+                                        b = document.createElement("DIV");
+                                        b.setAttribute("class", "select-items select-hide");
+                                        for (j = 1; j < ll; j++) {
+                                            /* For each option in the original select element,
+                                             create a new DIV that will act as an option item: */
+                                            c = document.createElement("DIV");
+                                            c.innerHTML = selElmnt.options[j].innerHTML;
+                                            c.addEventListener("click", function (e) {
+                                                /* When an item is clicked, update the original select box,
+                                                 and the selected item: */
+                                                var y, i, k, s, h, sl, yl;
+                                                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                                                sl = s.length;
+                                                h = this.parentNode.previousSibling;
+                                                for (i = 0; i < sl; i++) {
+                                                    if (s.options[i].innerHTML == this.innerHTML) {
+                                                        s.selectedIndex = i;
+                                                        h.innerHTML = this.innerHTML;
+                                                        y = this.parentNode.getElementsByClassName("same-as-selected");
+                                                        $('.select-reson-cnt').show();
+                                                        yl = y.length;
+                                                        for (k = 0; k < yl; k++) {
+                                                            y[k].removeAttribute("class");
+                                                        }
+                                                        this.setAttribute("class", "same-as-selected");
+                                                        break;
+                                                    }
+                                                }
+                                                h.click();
+                                            });
+                                            b.appendChild(c);
+                                        }
+                                        x[i].appendChild(b);
+                                        a.addEventListener("click", function (e) {
+                                            /* When the select box is clicked, close any other select boxes,
+                                             and open/close the current select box: */
+                                            e.stopPropagation();
+                                            closeAllSelect(this);
+                                            this.nextSibling.classList.toggle("select-hide");
+                                            this.classList.toggle("select-arrow-active");
+                                           
+                                        });
+                                    }
+                        
+                                    function closeAllSelect(elmnt) {
+                                        /* A function that will close all select boxes in the document,
+                                         except the current select box: */
+                                        var x, y, i, xl, yl, arrNo = [];
+                                        x = document.getElementsByClassName("select-items");
+                                        y = document.getElementsByClassName("select-selected");
+                                        xl = x.length;
+                                        yl = y.length;
+                                        for (i = 0; i < yl; i++) {
+                                            if (elmnt == y[i]) {
+                                                arrNo.push(i)
+                                            } else {
+                                                y[i].classList.remove("select-arrow-active");
+                                            }
+                                        }
+                                        for (i = 0; i < xl; i++) {
+                                            if (arrNo.indexOf(i)) {
+                                                x[i].classList.add("select-hide");
+                                            }
+                                        }
+                                    }
+                        
+                                    /* If the user clicks anywhere outside the select box,
+                                     then close all select boxes: */
+                                    document.addEventListener("click", closeAllSelect);
+                                </script>
 
         <!--[if IE 8]>
             <script type="text/javascript" src="/creditcards/resources/concat-js/ie.all.js"></script>
@@ -2527,26 +1950,10 @@ $(document).on("click", ".toggle", function(){
 
 <!-- 23 June, 2022 -->
 <script>
-    function redirectToClosure(){
-        let closurelink="request-received-successfully.html"
-        if(isAddonGlobal){
-            closurelink="success-sr-addon.html"
-        }
-        window.location.pathname = closurelink
-    }
     function tickActive() {
                 $('.gray-otp-wrapp').show();
                 $('.tick-buttons-block').hide();
             }
-    function termsCheckboxChange(val){
-        if(val.checked){
-            $('.e-sign-button').removeClass('disabled');
-            $('.e-sign-button').removeClass('tick-active');
-        }else{
-            $('.e-sign-button').addClass('disabled');
-            $('.e-sign-button').addClass('tick-active');
-        }
-    }
     $(document).ready(function() {
         $('#radio_1').click(function() {
             $('.btn-radio-block').removeClass('gray-btn');
@@ -2561,13 +1968,10 @@ $(document).on("click", ".toggle", function(){
         //     $('.btn-radio-block').removeClass('gray-btn');
         // });
 
-        // $('.terms_conditions').click(function() {
-        //     console.log("here");
-        //     $('.e-sign-button').toggleClass('gray-btn');
-        //     $('.e-sign-button').toggleClass('tick-active');
-        // });
-
-        
+        $('#terms_conditions').click(function() {
+                $('.e-sign-button').toggleClass('gray-btn');
+                $('.e-sign-button').toggleClass('tick-active');
+            });
 
             
     });

@@ -53,6 +53,7 @@ for (i = 0; i < l; i++) {
                             document.querySelector('#step2 .select-selected').setAttribute("data-next", this.dataset.next);
                             document.querySelector('#step2 .select-selected').setAttribute("data-current", 'step2'); 
                             document.querySelector('#reason-select-button').classList.remove('disabled')                            
+                            $('.select-reson-cnt.others').hide();
                             break;
                         case "new-billing-cycle-select":
                             $('#cycle-change-confirm').removeClass('disabled')
@@ -168,6 +169,8 @@ function showNextStep(nextStep,currentStep,isAddon) {
         document.querySelector('#reason-select-button').classList.add('disabled')
         $('.select-reson-cnt.others').show();
         return;
+    }else{
+        $('.select-reson-cnt.others').hide();
     }
     if(currentStep){
         $('.main-wrap.my-profile#'+currentStep).addClass('filled');    
@@ -189,17 +192,17 @@ function showNextStep(nextStep,currentStep,isAddon) {
     }
 }
 
-function validateForm(el,formId){
-    console.log(el);
-    console.log(formId);
-    if(el.checked){
-        $("#" +formId + ' .e-sign-button').removeClass('gray-btn');
-        $("#" +formId + ' .e-sign-button').addClass('tick-active');
-    }else{
-        $("#" +formId + ' .e-sign-button').addClass('gray-btn');
-        $("#" +formId + ' .e-sign-button').removeClass('tick-active');
-    }
-}
+// function validateForm(el,formId){
+//     console.log(el);
+//     console.log(formId);
+//     if(el.checked){
+//         $("#" +formId + ' .e-sign-button').removeClass('gray-btn');
+//         $("#" +formId + ' .e-sign-button').addClass('tick-active');
+//     }else{
+//         $("#" +formId + ' .e-sign-button').addClass('gray-btn');
+//         $("#" +formId + ' .e-sign-button').removeClass('tick-active');
+//     }
+// }
 
 function handleStepChange(step,isAvail){
     // based on where the avail or skip is clicked from, called different functions/process
@@ -238,7 +241,7 @@ function handleStepChange(step,isAvail){
                 showNextStep('step4-3','step3-3');
                 break
             }
-                showNextStep('step4-4','step3-3');
+            showNextStep('step4-4','step3-3');
             // case of Change Billing Cycle
             break;
         case 'step3-4':
@@ -249,7 +252,11 @@ function handleStepChange(step,isAvail){
         case 'step3-5':
             // case of other fees and charges
             // show step 4 of more offers
-            showNextStep('step4-5','step3-5');            
+            if(isAvail){
+                showNextStep('step4-5','step3-5');            
+                break
+            }
+            showNextStep('step4-4','step3-5');            
             break;
         case 'step3-7':
             // case of other fees and charges
@@ -261,12 +268,14 @@ function handleStepChange(step,isAvail){
             const selectedOffer = $('input[name="more-offers-radio"]:checked').val();
             // write what else happens here
             showNextStep('step5','step4-4');
+            resetTermsCheckbox()
             break;
         case 'step4-3':
             // case for step 4 change billing cycle in  "billing cycle issues."
             
             // write what else happens here
             showNextStep('step5','step4-3');
+            resetTermsCheckbox()
             break;
         case 'step3-addon':
             // case for confirm for add on
@@ -279,7 +288,10 @@ function handleStepChange(step,isAvail){
     }
 }
 
-
+function resetTermsCheckbox() {
+    document.querySelector('#step5.active .e-sign-button').classList.add('disabled')
+    document.querySelector('#step5.active #terms_conditions').checked = false;
+}
 function closeAllSelect(elmnt) {
     /* A function that will close all select boxes in the document,
      except the current select box: */
