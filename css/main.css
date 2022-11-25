@@ -2876,6 +2876,12 @@ label.card-label::after{
   font-size: 13px;
   margin-bottom: 10px;
 }
+
+#language-select,
+#time-select{
+  text-align: left;
+}
+
 @media (max-width:767px) {
   ul.add-on-offer-list{
     margin-left: -10px;
@@ -2991,7 +2997,6 @@ label.card-label::after{
 }
 
 @media (min-width: 767px) {
-  
   .select-reason-wrapp .custom-select {
     width: 70%;
   }

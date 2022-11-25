@@ -171,10 +171,15 @@ function showNextStep(nextStep,currentStep,isAddon) {
     // hide current Step if it exists
     // expect when others i,e. step3-6 is chosen
     if(nextStep == "step3-6"){
-        document.querySelector('#reason-select-button').classList.add('disabled')
-        $('.select-reson-cnt.others').show();
-        return;
-    }else{
+        if(document.querySelector('textarea.others-text').value.length>3){
+            
+        }else{
+            document.querySelector('#reason-select-button').classList.add('disabled')
+            $('.select-reson-cnt.others').show();
+            return;
+        }
+    }
+    else{
         $('.select-reson-cnt.others').hide();
     }
     if(currentStep){
@@ -228,6 +233,9 @@ function handleStepChange(step,isAvail){
             const selectedReason = document.querySelector('#step2 .select-selected');
             showNextStep(selectedReason.dataset.next,selectedReason.dataset.current);
             displaySelection("step2",selectedReason.innerHTML);
+            if(document.querySelector('.select-reson-cnt.others').style.display){
+                showNextStep(selectedReason.dataset.next,selectedReason.dataset.current);
+            }
             break;
         case 'step3-1':
             // case of Annual Fee Waiver
@@ -263,6 +271,9 @@ function handleStepChange(step,isAvail){
             }
             showNextStep('step4-4','step3-5');            
             break;
+        case 'step3-6':
+            showNextStep('step4-others','step3-6');
+            break;
         case 'step3-7':
             // case of other fees and charges
             // show step 4 of more offers
@@ -288,6 +299,7 @@ function handleStepChange(step,isAvail){
             // write what else happens here
             showNextStep('step4-addon','step3-addon');
             break;
+        
         default:
             break;
     }
