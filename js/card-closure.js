@@ -156,20 +156,20 @@ function showNextStep(nextStep,currentStep,isAddon) {
     const nextStepDashIndex = nextStep.indexOf('-')
     if(nextStep.substr(0,nextStepDashIndex) == 'step3'){
         // all step 3s
-        if(isAddonGlobal){
-            $('#step3-addon').removeClass('hidden');
-            $('#step3-addon').addClass('active');
-            $('#step3-addon').find(".mumer-heading").addClass("toggle");
-            if(currentStep){
-                $('.main-wrap.my-profile#'+currentStep).addClass('filled');    
-                $('.main-wrap.my-profile#'+currentStep).removeClass('active');
-                $('.select-reson-cnt.others').hide();    
-            }
-            return
-        }else{
+        // if(isAddonGlobal){
+        //     $('#step3-addon').removeClass('hidden');
+        //     $('#step3-addon').addClass('active');
+        //     $('#step3-addon').find(".mumer-heading").addClass("toggle");
+        //     if(currentStep){
+        //         $('.main-wrap.my-profile#'+currentStep).addClass('filled');    
+        //         $('.main-wrap.my-profile#'+currentStep).removeClass('active');
+        //         $('.select-reson-cnt.others').hide();    
+        //     }
+        //     return
+        // }else{
             $('.main-wrap.step-3-wrapp.active').addClass('hidden');
             $('.main-wrap.step-3-wrapp.active').removeClass('active');
-        }
+        // }
     }
 
     // hide current Step if it exists
@@ -236,6 +236,9 @@ function handleStepChange(step,isAvail,currentStepOverride){
                     document.querySelector('#reason-select-button').classList.add('disabled')
                     $('.select-reson-cnt.others').show();
                 }
+            }
+            if(selectedReason.dataset.next == 'step3-7' && isAddonGlobal){      
+                showNextStep('step3-addon',selectedReason.dataset.current);          
             }
             else{
                 
