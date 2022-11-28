@@ -1248,7 +1248,7 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0" >Avail Offer</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0"  onclick="handleStepChange('step3-1',true)">Avail Offer</a>
                                             <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-1')">Skip</a>
                                         </div>
                                     </div>
@@ -1363,7 +1363,7 @@
                                     <span class="number-count numeric">3</span><span class="number-count check-img">
                                         <img src="img/path-copy.svg" /></span> Card Features and Offers
                                 </div>
-                                <div class="collapse-content  show">
+                                <div class="collapse-content">
                                     <div class="reinstatement-content-wrapp card-features-and-offers">
                                         <p class="gray mb-20">Some of the benefits you get along with your SBI Card Elite include:</p>
                                         <ul>
@@ -1385,169 +1385,13 @@
                                         <p class="gray mt-20">Explore exiciting offers on your card, <a>view offers here.</a></p>
                                         <div class="button-block spaced">
                                             <a href="#" class="blue-btn mb-0 mt-0 ">Continue using card</a>
-                                            <a href="#" class="blue-link mb-0 mt-0 ">Skip</a>
+                                            <a href="#" class="blue-link mb-0 mt-0 " onclick="handleStepChange('step3-7')">Skip</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
                         <!-- STEP 4 -->
-                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step4-3">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">4</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> Change Billing Cycle
-                                </div>
-                                <div class="collapse-content ">
-                                    <div class="reinstatement-content-wrapp">
-                                        <div class="horizontal-select">
-                                            <label for="cb-select">Current Billing Cycle</label>
-                                            <div class="form-control" >
-                                                <input type="text" class="disabled-select" disabled value="8th of every month"/>
-                                            </div>
-                                        </div>
-                                        <div class="horizontal-select">
-                                            <label for="nb-select">New Billing Cycle</label>
-                                            <div class="form-control custom-select custom-select-reusable" id="new-billing-cycle-select">                                            
-                                                <select id="nb-select" name="nb-select" class="form-control nb-select">
-                                                    <option value="01">1st of every month</option>
-                                                    <option value="02">2nd of every month</option>
-                                                    <option value="03">3rd of every month</option>
-                                                    <option value="07">7th of every month</option>
-                                                    <option value="11">11th of every month</option>
-                                                    <option value="14">14th of every month</option>
-                                                    <option value="21">21st of every month</option>
-                                                    <option value="24">24th of every month</option>
-                                                    <option value="27">27th of every month</option>
-                                                    <option value="30">30th of every month</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="input-block tick-buttons-block">
-                                            <a href="success-sr-billing.html" id="cycle-change-confirm" class="blue-btn disabled">Confirm</a>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step3-6">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">3</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> Some Offers for you
-                                </div>
-                                <div class="collapse-content ">
-                                    <div class="reinstatement-content-wrapp">
-                                        <div class="offers-radio-block-wrapp">
-                                            <div class="radio-buttons-block">
-                                                <div class="radio-block">
-                                                    <input type="radio" id="more-radio-1" name="more-offers-radio" value="annual-fee-waiver">
-                                                    <label for="more-radio-1" class="card-label">
-                                                        <div class="card-radio-header">
-                                                            <img src="./img/clock.svg" alt="" srcset="">
-                                                            Annual Fee Waiver
-                                                        </div>
-                                                        <div class="card-radio-body">
-                                                            <p>Get instant cash and easily fulfill all your needs.</p>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                                <div class="radio-block">
-                                                    <input type="radio" id="more-radio-2" name="more-offers-radio" value="fee-reversal">
-                                                    <label for="more-radio-2" class="card-label">
-                                                        <div class="card-radio-header">
-                                                            <img src="./img/clock.svg" alt="" srcset="">
-                                                            Fee Reversal
-                                                        </div>
-                                                        <div class="card-radio-body">
-                                                            <p>Get instant cash and easily fulfill all your needs.</p>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                                <div class="radio-block">
-                                                    <input type="radio" id="more-radio-3" name="more-offers-radio" value="credit-limit-increase">
-                                                    <label for="more-radio-3" class="card-label">
-                                                        <div class="card-radio-header">
-                                                            <img src="./img/clock.svg" alt="" srcset="">
-                                                            Credit Limit Increase
-                                                        </div>
-                                                        <div class="card-radio-body">
-                                                            <p>Get instant cash and easily fulfill all your needs.</p>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                                <div class="radio-block">
-                                                    <input type="radio" id="more-radio-4" name="more-offers-radio" value="get-reward-points" >
-                                                    <label for="more-radio-4" class="card-label">
-                                                        <div class="card-radio-header">
-                                                            <img src="./img/clock.svg" alt="" srcset="">
-                                                            Get Reward Points
-                                                        </div>
-                                                        <div class="card-radio-body">
-                                                            <p>Get instant cash and easily fulfill all your needs.</p>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                                <div class="radio-block">
-                                                    <input type="radio" id="more-radio-5" name="more-offers-radio" value="change-billing-cycle" >
-                                                    <label for="more-radio-5" class="card-label">
-                                                        <div class="card-radio-header">
-                                                            <img src="./img/clock.svg" alt="" srcset="">
-                                                            Change Billing Cycle
-                                                        </div>
-                                                        <div class="card-radio-body">
-                                                            <p>Get instant cash and easily fulfill all your needs.</p>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                                <div class="radio-block">
-                                                    <input type="radio" id="more-radio-6" name="more-offers-radio" value="card-features-and-offers">
-                                                    <label for="more-radio-6" class="card-label">
-                                                        <div class="card-radio-header">
-                                                            <img src="./img/clock.svg" alt="" srcset="">
-                                                            Card Features & Offers
-                                                        </div>
-                                                        <div class="card-radio-body">
-                                                            <p class="gray">Get instant cash and easily fulfill all your needs.</p>
-                                                            <div class="extra-radio-body">
-                                                                <div class=" card-features-and-offers">
-                                                                    <p class="gray mb-20">Some of the benefits you get along with your SBI Card Elite include:</p>
-                                                                    <ul>
-                                                                        <li>
-                                                                            Welcome e-Gift Voucher worth ₹5,000 on joining
-                                                                        </li>
-                            
-                                                                        <li>
-                                                                            Get free movie tickets worth ₹6,000/year
-                                                                        </li>
-                                                                        <li>
-                                                                            Earn upto 50,000 Bonus Reward Points worth ₹12,500/year
-                                                                        </li>
-                                                                        <li>
-                                                                            Complimentary membership to Club Vistara and Trident Privilege
-                                                                                Program
-                                                                        </li>
-                                                                    </ul>
-                                                                    <p class="gray mt-20">Explore exiciting offers on your card, <a>view offers here.</a></p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                                <div class="button-block spaced">
-                                                    <a href="#" class="blue-btn mb-0 mt-0" >Avail Offer</a>
-                                                    <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-6')">Skip</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
                         <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step4-4">
 
                             <div class="">
@@ -1654,7 +1498,7 @@
                                                     </label>
                                                 </div>
                                                 <div class="button-block spaced">
-                                                    <a href="#" class="blue-btn mb-0 mt-0" >Avail Offer</a>
+                                                    <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChange('step4-4',true)">Avail Offer</a>
                                                     <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step4-4')">Skip</a>
                                                 </div>
                                             </div>
@@ -1663,6 +1507,163 @@
                                 </div>
                             </div>
                         </section>
+                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step4-3">
+
+                            <div class="">
+                                <div class="mumer-heading">
+                                    <span class="number-count numeric">4</span><span class="number-count check-img">
+                                        <img src="img/path-copy.svg" /></span> Change Billing Cycle
+                                </div>
+                                <div class="collapse-content ">
+                                    <div class="reinstatement-content-wrapp">
+                                        <div class="horizontal-select">
+                                            <label for="cb-select">Current Billing Cycle</label>
+                                            <div class="form-control" >
+                                                <input type="text" class="disabled-select" disabled value="8th of every month"/>
+                                            </div>
+                                        </div>
+                                        <div class="horizontal-select">
+                                            <label for="nb-select">New Billing Cycle</label>
+                                            <div class="form-control custom-select custom-select-reusable" id="new-billing-cycle-select">                                            
+                                                <select id="nb-select" name="nb-select" class="form-control nb-select">
+                                                    <option value="01">1st of every month</option>
+                                                    <option value="02">2nd of every month</option>
+                                                    <option value="03">3rd of every month</option>
+                                                    <option value="07">7th of every month</option>
+                                                    <option value="11">11th of every month</option>
+                                                    <option value="14">14th of every month</option>
+                                                    <option value="21">21st of every month</option>
+                                                    <option value="24">24th of every month</option>
+                                                    <option value="27">27th of every month</option>
+                                                    <option value="30">30th of every month</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-block tick-buttons-block">
+                                            <a href="success-sr-billing.html" id="cycle-change-confirm" class="blue-btn disabled">Confirm</a>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                         <!-- <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step3-6">
+
+                            <div class="">
+                                <div class="mumer-heading">
+                                    <span class="number-count numeric">3</span><span class="number-count check-img">
+                                        <img src="img/path-copy.svg" /></span> Some Offers for you
+                                </div>
+                                <div class="collapse-content ">
+                                    <div class="reinstatement-content-wrapp">
+                                        <div class="offers-radio-block-wrapp">
+                                            <div class="radio-buttons-block">
+                                                <div class="radio-block">
+                                                    <input type="radio" id="some-radio-1" name="some-offers-radio" value="annual-fee-waiver">
+                                                    <label for="some-radio-1" class="card-label">
+                                                        <div class="card-radio-header">
+                                                            <img src="./img/clock.svg" alt="" srcset="">
+                                                            Annual Fee Waiver
+                                                        </div>
+                                                        <div class="card-radio-body">
+                                                            <p>Get instant cash and easily fulfill all your needs.</p>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="radio-block">
+                                                    <input type="radio" id="some-radio-2" name="some-offers-radio" value="fee-reversal">
+                                                    <label for="some-radio-2" class="card-label">
+                                                        <div class="card-radio-header">
+                                                            <img src="./img/clock.svg" alt="" srcset="">
+                                                            Fee Reversal
+                                                        </div>
+                                                        <div class="card-radio-body">
+                                                            <p>Get instant cash and easily fulfill all your needs.</p>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="radio-block">
+                                                    <input type="radio" id="some-radio-3" name="some-offers-radio" value="credit-limit-increase">
+                                                    <label for="some-radio-3" class="card-label">
+                                                        <div class="card-radio-header">
+                                                            <img src="./img/clock.svg" alt="" srcset="">
+                                                            Credit Limit Increase
+                                                        </div>
+                                                        <div class="card-radio-body">
+                                                            <p>Get instant cash and easily fulfill all your needs.</p>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="radio-block">
+                                                    <input type="radio" id="some-radio-4" name="some-offers-radio" value="get-reward-points" >
+                                                    <label for="some-radio-4" class="card-label">
+                                                        <div class="card-radio-header">
+                                                            <img src="./img/clock.svg" alt="" srcset="">
+                                                            Get Reward Points
+                                                        </div>
+                                                        <div class="card-radio-body">
+                                                            <p>Get instant cash and easily fulfill all your needs.</p>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="radio-block">
+                                                    <input type="radio" id="some-radio-5" name="some-offers-radio" value="change-billing-cycle" >
+                                                    <label for="some-radio-5" class="card-label">
+                                                        <div class="card-radio-header">
+                                                            <img src="./img/clock.svg" alt="" srcset="">
+                                                            Change Billing Cycle
+                                                        </div>
+                                                        <div class="card-radio-body">
+                                                            <p>Get instant cash and easily fulfill all your needs.</p>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="radio-block">
+                                                    <input type="radio" id="some-radio-6" name="some-offers-radio" value="card-features-and-offers">
+                                                    <label for="some-radio-6" class="card-label">
+                                                        <div class="card-radio-header">
+                                                            <img src="./img/clock.svg" alt="" srcset="">
+                                                            Card Features & Offers
+                                                        </div>
+                                                        <div class="card-radio-body">
+                                                            <p class="gray">Get instant cash and easily fulfill all your needs.</p>
+                                                            <div class="extra-radio-body">
+                                                                <div class=" card-features-and-offers">
+                                                                    <p class="gray mb-20">Some of the benefits you get along with your SBI Card Elite include:</p>
+                                                                    <ul>
+                                                                        <li>
+                                                                            Welcome e-Gift Voucher worth ₹5,000 on joining
+                                                                        </li>
+                            
+                                                                        <li>
+                                                                            Get free movie tickets worth ₹6,000/year
+                                                                        </li>
+                                                                        <li>
+                                                                            Earn upto 50,000 Bonus Reward Points worth ₹12,500/year
+                                                                        </li>
+                                                                        <li>
+                                                                            Complimentary membership to Club Vistara and Trident Privilege
+                                                                                Program
+                                                                        </li>
+                                                                    </ul>
+                                                                    <p class="gray mt-20">Explore exiciting offers on your card, <a>view offers here.</a></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="button-block spaced">
+                                                    <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChange('step3-6',true)">Avail Offer</a>
+                                                    <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-6')">Skip</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>  -->
+                        
                         <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step4-5">
 
                             <div class="">

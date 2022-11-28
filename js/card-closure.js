@@ -170,16 +170,7 @@ function showNextStep(nextStep,currentStep,isAddon) {
 
     // hide current Step if it exists
     // expect when others i,e. step3-6 is chosen
-    if(nextStep == "step3-6"){
-        if(document.querySelector('textarea.others-text').value.length>3){
-            
-        }else{
-            document.querySelector('#reason-select-button').classList.add('disabled')
-            $('.select-reson-cnt.others').show();
-            return;
-        }
-    }
-    else{
+    if(nextStep != "step3-6"){
         $('.select-reson-cnt.others').hide();
     }
     if(currentStep){
@@ -214,7 +205,7 @@ function showNextStep(nextStep,currentStep,isAddon) {
 //     }
 // }
 
-function handleStepChange(step,isAvail){
+function handleStepChange(step,isAvail,currentStepOverride){
     // based on where the avail or skip is clicked from, called different functions/process
 
     switch (step) {
@@ -231,15 +222,31 @@ function handleStepChange(step,isAvail){
             break;
         case 'step2':
             const selectedReason = document.querySelector('#step2 .select-selected');
-            showNextStep(selectedReason.dataset.next,selectedReason.dataset.current);
+            
             displaySelection("step2",selectedReason.innerHTML);
-            if(document.querySelector('.select-reson-cnt.others').style.display){
+            if(selectedReason.dataset.next == 'step3-6'){
+                if(document.querySelector('textarea.others-text').value.length>3){
+                    showNextStep('step4-4',selectedReason.dataset.current);
+                }else{
+                    document.querySelector('.select-reson-cnt.others').style.display
+                    document.querySelector('#reason-select-button').classList.add('disabled')
+                    $('.select-reson-cnt.others').show();
+                }
+            }
+            else{
+                
                 showNextStep(selectedReason.dataset.next,selectedReason.dataset.current);
             }
+            changeNumberOnActiveStep()
             break;
         case 'step3-1':
             // case of Annual Fee Waiver
-            showNextStep('step4-4','step3-1');
+            if(isAvail){
+                window.location.pathname = "../success-sr-fees.html"
+                break;
+            }
+            showNextStep('step4-4',currentStepOverride?currentStepOverride:'step3-1');
+            changeNumberOnActiveStep()
             break;
         case 'step3-2':
             // case of Low Credit Limit
@@ -251,7 +258,7 @@ function handleStepChange(step,isAvail){
             break;            
         case 'step3-3':
             if(isAvail){
-                showNextStep('step4-3','step3-3');
+                showNextStep('step4-3',currentStepOverride?currentStepOverride:'step3-3');
                 break
             }
             showNextStep('step4-4','step3-3');
@@ -266,22 +273,32 @@ function handleStepChange(step,isAvail){
             // case of other fees and charges
             // show step 4 of more offers
             if(isAvail){
-                showNextStep('step4-5','step3-5');            
+                showNextStep('step4-5',currentStepOverride?currentStepOverride:'step3-5');            
                 break
             }
             showNextStep('step4-4','step3-5');            
             break;
         case 'step3-6':
+            if(isAvail){
+                const selectedOffer = $('input[name="some-offers-radio"]:checked').val();
+                handleOfferSelection(selectedOffer)
+                changeNumberOnActiveStep()
+                break;
+            }
             showNextStep('step4-others','step3-6');
             break;
         case 'step3-7':
-            // case of other fees and charges
-            // show step 4 of more offers
-            showNextStep('step4-7','step3-7');            
+            // case of low card usage
+            showNextStep('step5','step3-7');
+            changeNumberOnActiveStep();
             break;
         case 'step4-4':
             // case for step 4 More offers in  "no offers"
-            const selectedOffer = $('input[name="more-offers-radio"]:checked').val();
+            if(isAvail){
+                const selectedOffer = $('input[name="more-offers-radio"]:checked').val();
+                handleOfferSelection(selectedOffer)
+                break;
+            }
             // write what else happens here
             showNextStep('step5','step4-4');
             resetTermsCheckbox()
@@ -330,7 +347,38 @@ function closeAllSelect(elmnt) {
         }
     }
 }
-
+function changeNumberOnActiveStep(){
+    const activeSteps = document.querySelectorAll('.main-wrap.my-profile.active .number-count.numeric');
+    const lastFilledStep = document.querySelectorAll('.main-wrap.my-profile.filled .number-count.numeric');
+    activeSteps[activeSteps.length-1].innerHTML = parseInt(lastFilledStep[lastFilledStep.length-1].innerHTML) + 1;
+}
+function handleOfferSelection(selection){
+    switch (selection) {
+        case "annual-fee-waiver":
+            handleStepChange('step3-1',true);
+            break;
+        case "fee-reversal":
+            handleStepChange('step3-5',true,'step4-4');
+            // make it step 5 in html
+            changeNumberOnActiveStep()
+            break;
+        case "credit-limit-increase":
+            handleStepChange('step3-2',true);
+            break;
+        case "get-reward-points":
+            // handleStepChange('step3-1');
+            break;
+        case "change-billing-cycle":
+            handleStepChange('step3-3',true,'step4-4')
+            changeNumberOnActiveStep(5)
+            break;
+        case "card-features-and-offers":
+            handleStepChange('step3-1');
+            break;
+        default:
+            break;
+    }
+}
 /* If the user clicks anywhere outside the select box,
  then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
