@@ -225,8 +225,7 @@ function handleStepChange(step,isAvail,currentStepOverride){
             }
             break;
         case 'step2':
-            const selectedReason = document.querySelector('#step2 .select-selected');
-            
+            const selectedReason = document.querySelector('#step2 .select-selected');            
             displaySelection("step2",selectedReason.innerHTML);
             if(selectedReason.dataset.next == 'step3-6'){
                 if(document.querySelector('textarea.others-text').value.length>3){
@@ -237,11 +236,10 @@ function handleStepChange(step,isAvail,currentStepOverride){
                     $('.select-reson-cnt.others').show();
                 }
             }
-            if(selectedReason.dataset.next == 'step3-7' && isAddonGlobal){      
+            else if(selectedReason.dataset.next == 'step3-7' && isAddonGlobal){      
                 showNextStep('step3-addon',selectedReason.dataset.current);          
             }
             else{
-                
                 showNextStep(selectedReason.dataset.next,selectedReason.dataset.current);
             }
             changeNumberOnActiveStep()
