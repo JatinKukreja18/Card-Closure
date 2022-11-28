@@ -52,7 +52,8 @@ for (i = 0; i < l; i++) {
                             removeOpenedSteps();
                             document.querySelector('#step2 .select-selected').setAttribute("data-next", this.dataset.next);
                             document.querySelector('#step2 .select-selected').setAttribute("data-current", 'step2'); 
-                            document.querySelector('#reason-select-button').classList.remove('disabled')                            
+                            document.querySelector('#reason-select-button').classList.remove('disabled') 
+                            resetTermsCheckbox();                           
                             $('.select-reson-cnt.others').hide();
                             break;
                         case "new-billing-cycle-select":
@@ -142,7 +143,10 @@ function removeOpenedSteps(){
     $('.main-wrap.my-profile.step-3-wrapp').addClass('hidden');   
     $('.main-wrap.my-profile.step-4-wrapp').removeClass('filled');    
     $('.main-wrap.my-profile.step-4-wrapp').removeClass('active');   
-    $('.main-wrap.my-profile.step-4-wrapp').addClass('hidden');   
+    $('.main-wrap.my-profile.step-4-wrapp').addClass('hidden');
+    $('.main-wrap.my-profile.step-5-wrapp').removeClass('filled');    
+    $('.main-wrap.my-profile.step-5-wrapp').removeClass('active');   
+    $('.main-wrap.my-profile.step-5-wrapp').addClass('hidden');   
 }
 function showNextStep(nextStep,currentStep,isAddon) {
 
@@ -323,8 +327,12 @@ function handleStepChange(step,isAvail,currentStepOverride){
 }
 
 function resetTermsCheckbox() {
-    document.querySelector('#step5.active .e-sign-button').classList.add('disabled')
-    document.querySelector('#step5.active #terms_conditions').checked = false;
+    document.querySelector('#step5 .e-sign-button').classList.add('disabled')
+    document.querySelector('#step4-others .e-sign-button').classList.add('disabled')
+    document.querySelector('#terms-form-confirm-4 .e-sign-button').classList.add('disabled')
+    document.querySelector('#step5 #terms_conditions_step5').checked = false;
+    document.querySelector('#step4-others #terms_conditions_step5').checked = false;
+    document.querySelector('#terms-form-confirm-4 input').checked = false;
 }
 function closeAllSelect(elmnt) {
     /* A function that will close all select boxes in the document,
