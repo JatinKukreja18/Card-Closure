@@ -2647,7 +2647,7 @@ $(document).on("click", ".toggle", function(){
                                             h.innerHTML = this.innerHTML;
                                             y = this.parentNode.getElementsByClassName("same-as-selected");
                                             $('.btn-radio-block').addClass('blue-button-remain');
-                                            $('.btn-radio-block').removeClass('gray-btn');
+                                            $('.btn-radio-block').removeClass('disabled');
                                             yl = y.length;
                                             for (k = 0; k < yl; k++) {
                                                 y[k].removeAttribute("class");
@@ -2712,7 +2712,7 @@ $(document).on("click", ".toggle", function(){
         if(isAddonGlobal){
             closurelink="./success-sr-addon.html"
         }
-        window.location.pathname = closurelink
+        window.location.href = closurelink
     }
     function tickActive() {
                 $('.gray-otp-wrapp').show();
@@ -2729,11 +2729,11 @@ $(document).on("click", ".toggle", function(){
     }
     $(document).ready(function() {
         $('#radio_1').click(function() {
-            $('.btn-radio-block').removeClass('gray-btn');
+            $('.btn-radio-block').removeClass('disabled');
             $('.radio-block.with-custom-select .form-control.custom-select').css('display', 'none')
         });
         $('#radio_2').click(function() {
-            $('.btn-radio-block').addClass('gray-btn');
+            $('.btn-radio-block').addClass('disabled');
             $('.radio-block.with-custom-select .form-control.custom-select').css('display', 'inline-block')
         });
 
