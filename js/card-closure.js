@@ -151,25 +151,12 @@ function removeOpenedSteps(){
 function showNextStep(nextStep,currentStep,isAddon) {
 
     if(isAddon!=undefined) isAddonGlobal = isAddon;
-
+    if(nextStep === 'step3-4') nextStep = 'step4-4'
     // hide other steps of 3rd category
     const nextStepDashIndex = nextStep.indexOf('-')
-    if(nextStep.substr(0,nextStepDashIndex) == 'step3'){
-        // all step 3s
-        // if(isAddonGlobal){
-        //     $('#step3-addon').removeClass('hidden');
-        //     $('#step3-addon').addClass('active');
-        //     $('#step3-addon').find(".mumer-heading").addClass("toggle");
-        //     if(currentStep){
-        //         $('.main-wrap.my-profile#'+currentStep).addClass('filled');    
-        //         $('.main-wrap.my-profile#'+currentStep).removeClass('active');
-        //         $('.select-reson-cnt.others').hide();    
-        //     }
-        //     return
-        // }else{
-            $('.main-wrap.step-3-wrapp.active').addClass('hidden');
-            $('.main-wrap.step-3-wrapp.active').removeClass('active');
-        // }
+    if(nextStep.substr(0,nextStepDashIndex) == 'step3'){        
+        $('.main-wrap.step-3-wrapp.active').addClass('hidden');
+        $('.main-wrap.step-3-wrapp.active').removeClass('active');
     }
 
     // hide current Step if it exists
@@ -227,7 +214,10 @@ function handleStepChange(step,isAvail,currentStepOverride){
         case 'step2':
             const selectedReason = document.querySelector('#step2 .select-selected');            
             displaySelection("step2",selectedReason.innerHTML);
-            if(selectedReason.dataset.next == 'step3-6'){
+            if(isAddonGlobal){      
+                showNextStep('step3-addon',selectedReason.dataset.current);          
+            }
+            else if(selectedReason.dataset.next == 'step3-6'){
                 if(document.querySelector('textarea.others-text').value.length>3){
                     showNextStep('step4-4',selectedReason.dataset.current);
                 }else{
@@ -235,9 +225,6 @@ function handleStepChange(step,isAvail,currentStepOverride){
                     document.querySelector('#reason-select-button').classList.add('disabled')
                     $('.select-reson-cnt.others').show();
                 }
-            }
-            else if(selectedReason.dataset.next == 'step3-7' && isAddonGlobal){      
-                showNextStep('step3-addon',selectedReason.dataset.current);          
             }
             else{
                 showNextStep(selectedReason.dataset.next,selectedReason.dataset.current);
