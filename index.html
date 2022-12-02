@@ -1824,14 +1824,14 @@
                                                                                 <div class="otp-block">
                                                                                     <label>Enter OTP<span class="red-text">*</span></label>
                                                                                     <input 
-                                                                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                                                    oninput="validateOTP(this)"
                                                                                     type = "number"
                                                                                     maxlength = "6">
                                                                                     <a href="#" class="input-blue-text">Resend OTP</a>
                                                                                 </div>
                                                                                 <div class="otp-submit-block">
                                                                                     <!-- <a href="request-received-successfully.html" class="step-2 blue-btn mb-0">Submit</a> -->
-                                                                                    <a href="javascript:void(0);" onclick="$('#connect-modal').show();" class="step-2 blue-btn mb-0">Submit</a>
+                                                                                    <a href="javascript:void(0);" onclick="$('#connect-modal').show();" class="step-2 blue-btn mb-0 disabled">Submit</a>
                                                                                     <a href="#" class="step-2 blue-btn gray-btn mb-0">Cancel</a>
                                                                                 </div>
                                                                             </div>

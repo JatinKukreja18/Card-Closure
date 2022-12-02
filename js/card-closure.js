@@ -277,7 +277,7 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
             // case of Annual Fee Waiver
             if(isAvail){
                 assignActionToStep('step-annual-fee','avail')
-                window.location.pathname = "./success-sr-fees.html"
+                window.location.href = "./success-sr-fees.html"
                 break;
             }
             // showNextStep('step-other-offers',currentStepOverride?currentStepOverride:'step3-1');
@@ -433,11 +433,20 @@ function changeNumberOnActiveStep(){
     const lastFilledStep = document.querySelectorAll('.main-wrap.my-profile.filled .number-count.numeric');
     activeSteps[activeSteps.length-1].innerHTML = parseInt(lastFilledStep[lastFilledStep.length-1].innerHTML) + 1;
 }
+function validateOTP(el){
+    if (el.value.length > el.maxLength) {
+        el.value = el.value.slice(0, el.maxLength);
+    }else if(el.value.length==6) {
+        $('.otp-submit-block .blue-btn.disabled').removeClass('disabled');
+    }else {
+        $('.otp-submit-block .blue-btn').addClass('disabled') ;
+    }
+}
 function handleOfferSelection(selection){
     switch (selection) {
         case "annual-fee-waiver":
             pushIfNew('step-annual-fee','')
-            window.location.pathname = "./success-sr-fees.html"
+            window.location.href = "./success-sr-fees.html"
             break;
         case "fee-reversal":
             assignActionToStep('step-other-offers','avail')
@@ -452,7 +461,7 @@ function handleOfferSelection(selection){
             break;
         case "get-reward-points":
             assignActionToStep('step-other-offers','avail') 
-            window.location.pathname = "./success-sr-fees.html"
+            window.location.href = "./success-sr-fees.html"
             break;
         case "change-billing-cycle":
             assignActionToStep('step-other-offers','avail') 
@@ -463,12 +472,13 @@ function handleOfferSelection(selection){
             break;
         case "card-features-and-offers":
             assignActionToStep('step-other-offers','avail') 
-            window.location.pathname = "./success-sr-fees.html"
+            window.location.href = "./success-sr-fees.html"
             break;
         default:
             break;
     }
 }
+
 /* If the user clicks anywhere outside the select box,
  then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
