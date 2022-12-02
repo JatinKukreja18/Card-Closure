@@ -1143,7 +1143,7 @@
                                         </div>
                                     </div>
                                     <div class="button-block">
-                                        <a href="#" class="blue-btn mb-0 mt-0 btn-radio-block" onclick="handleStepChange('step1')">Next</a>
+                                        <a href="#" class="blue-btn mb-0 mt-0 btn-radio-block" onclick="handleStepChangeFrom('step1')">Next</a>
                                     </div>
                             </div>
 
@@ -1162,13 +1162,13 @@
                                     <div class="form-control custom-select custom-select-reusable" id="reason-select">
                                         <select  id="add-type" name="add-type" class="form-control add-type" >
                                             <option value="0">Select</option>
-                                            <option value="1">Annual fee</option>
-                                            <option value="2">Low credit limit</option>
-                                            <option value="3">Billing cycle issues</option>
-                                            <option value="4">No offers</option>
-                                            <option value="7">Low Credit Card Usage</option>
-                                            <option value="5">Other fees and charges</option>
-                                            <option value="6">Other</option>
+                                            <option value="annual-fee">Annual fee</option>
+                                            <option value="low-credit">Low credit limit</option>
+                                            <option value="billing-cycle">Billing cycle issues</option>
+                                            <option value="no-offers">No offers</option>
+                                            <option value="low-credit-usage">Low Credit Card Usage</option>
+                                            <option value="other-fees">Other fees and charges</option>
+                                            <option value="other">Other</option>
                                         </select>
                                     </div>
                                     <div class="select-reson-cnt others">
@@ -1187,7 +1187,7 @@
                                     <div class="input-block ">
                                         <a href="javascript:void(0);" 
                                             id="reason-select-button"
-                                            class="blue-btn disabled" onclick="handleStepChange('step2')">Next</a>
+                                            class="blue-btn disabled" onclick="handleStepChangeFrom('step2')">Next</a>
                                     </div>
                                 </div>
                             </div>
@@ -1224,14 +1224,14 @@
                                             </ul>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="javascript:void(0);" class="blue-btn mb-0 mt-0" >Continue using card</a>
-                                            <a href="javascript:void(0);" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-addon')">Skip</a>
+                                            <a href="javascript:void(0);" class="blue-btn mb-0 mt-0"  onclick="handleStepChangeFrom('step3-addon',true)">Continue using card</a>
+                                            <a href="javascript:void(0);" class="blue-link mb-0 mt-0" onclick="handleStepChangeFrom('step3-addon')">Skip</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
-                        <section class="main-wrap my-profile border-top step-3-wrapp  hidden" id="step3-1">
+                        <section class="main-wrap my-profile border-top step-3-wrapp  hidden" id="step-annual-fee">
 
                             <div class="">
                                 <div class="mumer-heading">
@@ -1248,14 +1248,14 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0"  onclick="handleStepChange('step3-1',true)">Avail Offer</a>
-                                            <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-1')">Skip</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0"  onclick="handleStepChangeFrom('step-annual-fee',true)">Avail Offer</a>
+                                            <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChangeFrom('step-annual-fee')">Skip</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
-                        <section class="main-wrap my-profile border-top step-3-wrapp  hidden" id="step3-2">
+                        <section class="main-wrap my-profile border-top step-3-wrapp  hidden" id="step-low-credit">
 
                             <div class="">
                                 <div class="mumer-heading">
@@ -1273,14 +1273,14 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0 " onclick="handleStepChange('step3-2',true)">Avail Offer</a>
-                                            <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-2')">Skip</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0 " onclick="handleStepChangeFrom('step-low-credit',true)">Avail Offer</a>
+                                            <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChangeFrom('step-low-credit')">Skip</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
-                        <section class="main-wrap my-profile border-top step-3-wrapp  hidden" id="step3-3">
+                        <section class="main-wrap my-profile border-top step-3-wrapp  hidden" id="step-billing-cycle">
 
                             <div class="">
                                 <div class="mumer-heading">
@@ -1298,39 +1298,15 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChange('step3-3',true)">Avail Offer</a>
-                                            <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-3')">Skip</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChangeFrom('step-billing-cycle',true)">Avail Offer</a>
+                                            <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChangeFrom('step-billing-cycle')">Skip</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
-                        <section class="main-wrap my-profile border-top step-3-wrapp  hidden" id="step3-4">
-
-                            <div class="">
-                                <div class="mumer-heading">
-                                    <span class="number-count numeric">3</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> Personalized Offer
-                                </div>
-                                <div class="collapse-content ">
-                                    <div class="reinstatement-content-wrapp">
-                                        <p>We are sad to see you go, here are some benefits that might interest you:</p>
-                                        <div class="offer-card">
-                                            <img src="./img/offer.png" alt="" class="offer-image">
-                                            <div class="offer-content-box">
-                                                <h4 class="bold-para">Annual Fee Waiver</h2>
-                                                <p>Get instant cash and easily fulfill all your needs.</p>
-                                            </div>
-                                        </div>
-                                        <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0" >Avail Offer</a>
-                                            <a href="#" class="blue-link mb-0 mt-0 " onclick="handleStepChange('step3-4')">Skip</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="main-wrap my-profile border-top step-3-wrapp  hidden" id="step3-5">
+                        
+                        <section class="main-wrap my-profile border-top step-3-wrapp  hidden" id="step-other-fees">
 
                             <div class="">
                                 <div class="mumer-heading">
@@ -1348,15 +1324,15 @@
                                             </div>
                                         </div>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0 " onclick="handleStepChange('step3-5',true)">Avail Offer</a>
-                                            <a href="#" class="blue-link mb-0 mt-0 " onclick="handleStepChange('step3-5')">Skip</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0 " onclick="handleStepChangeFrom('step-other-fees',true)">Avail Offer</a>
+                                            <a href="#" class="blue-link mb-0 mt-0 " onclick="handleStepChangeFrom('step-other-fees')">Skip</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
                         
-                        <section class="main-wrap my-profile border-top step-3-wrapp hidden" id="step3-7">
+                        <section class="main-wrap my-profile border-top step-3-wrapp hidden" id="step-low-credit-usage">
 
                             <div class="">
                                 <div class="mumer-heading">
@@ -1384,15 +1360,15 @@
                                         </ul>
                                         <p class="gray mt-20">Explore exiciting offers on your card, <a>view offers here.</a></p>
                                         <div class="button-block spaced">
-                                            <a href="#" class="blue-btn mb-0 mt-0 ">Continue using card</a>
-                                            <a href="#" class="blue-link mb-0 mt-0 " onclick="handleStepChange('step3-7')">Skip</a>
+                                            <a href="#" class="blue-btn mb-0 mt-0 " onclick="handleStepChangeFrom('step-low-credit-usage',true)">Continue using card</a>
+                                            <a href="#" class="blue-link mb-0 mt-0 " onclick="handleStepChangeFrom('step-low-credit-usage')">Skip</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
                         <!-- STEP 4 -->
-                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step4-4">
+                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step-other-offers">
 
                             <div class="">
                                 <div class="mumer-heading">
@@ -1498,8 +1474,8 @@
                                                     </label>
                                                 </div>
                                                 <div class="button-block spaced">
-                                                    <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChange('step4-4',true)">Avail Offer</a>
-                                                    <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step4-4')">Skip</a>
+                                                    <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChangeFrom('step-other-offers',true)">Avail Offer</a>
+                                                    <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChangeFrom('step-other-offers')">Skip</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -1507,7 +1483,7 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step4-3">
+                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step-change-billing-cycle">
 
                             <div class="">
                                 <div class="mumer-heading">
@@ -1655,8 +1631,8 @@
                                                     </label>
                                                 </div>
                                                 <div class="button-block spaced">
-                                                    <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChange('step3-6',true)">Avail Offer</a>
-                                                    <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChange('step3-6')">Skip</a>
+                                                    <a href="#" class="blue-btn mb-0 mt-0" onclick="handleStepChangeFrom('step3-6',true)">Avail Offer</a>
+                                                    <a href="#" class="blue-link mb-0 mt-0" onclick="handleStepChangeFrom('step3-6')">Skip</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -1665,7 +1641,7 @@
                             </div>
                         </section>  -->
                         
-                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step4-5">
+                        <section class="main-wrap my-profile border-top step-4-wrapp hidden" id="step-request-fee-waiver">
 
                             <div class="">
                                 <div class="mumer-heading">
@@ -1695,7 +1671,7 @@
                             </div>
                         </section>
                         <!-- STEP CONFIRM -->
-                        <section class="main-wrap my-profile border-top step-5-wrapp hidden" id="step5">
+                        <section class="main-wrap my-profile border-top step-5-wrapp hidden" id="step-confirm">
 
                             <div class="">
                                 <div class="mumer-heading">
@@ -1725,12 +1701,12 @@
                                             </div>
 
                                                 <div>
-                                                    <label class="sbi-input-checkbox terms_conditions" for="terms_conditions_step5">
+                                                    <label class="sbi-input-checkbox terms_conditions" for="terms_conditions_confirm">
                                                         <span>I hereby confirm that I have read the</span>
                                                         <a href="#">Terms & Conditions</a> 
                                                         <span>and want to proceed with
                                                         the card closure request.</span>
-                                                            <input type="checkbox"  id="terms_conditions_step5" onchange="termsCheckboxChange(this)">
+                                                            <input type="checkbox"  id="terms_conditions_confirm" onchange="termsCheckboxChange(this)">
                                                             <span class="checkmark"></span>
                                                     </label>
                                                 </div>
@@ -1743,7 +1719,7 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="main-wrap my-profile border-top step-5-wrapp  hidden" id="step4-addon">
+                        <section class="main-wrap my-profile border-top step-5-wrapp  hidden" id="step-addon-confirm">
 
                             <div class="">
                                 <div class="mumer-heading">
@@ -1790,7 +1766,7 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="main-wrap my-profile border-top step-5-wrapp hidden" id="step4-others">
+                        <section class="main-wrap my-profile border-top step-5-wrapp hidden" id="step-confirm-others">
 
                             <div class="">
                                 <div class="mumer-heading">
@@ -1901,7 +1877,7 @@
                                     <div class="form-control mb-10">
                                         <!-- replace this with suitable dropdown -->
                                         <div class="form-control custom-select custom-select-reusable" id="time-select">
-                                            <select  id="add-type" name="add-type" class="form-control add-type" >
+                                            <select  id="time-select-select" name="time-select-select" class="form-control add-type" >
                                                 <option value="0">Select Time Slot</option>
                                                 <option value="8amto10am">8:00AM - 10:00AM</option>
                                                 <option value="10amto12pm">10:00AM - 12:00PM</option>
@@ -1918,7 +1894,7 @@
                                     <div class="form-control mb-10">
                                         <!-- replace this with suitable dropdown -->
                                         <div class="form-control custom-select custom-select-reusable" id="language-select">
-                                            <select  id="add-type" name="add-type" class="form-control add-type" >
+                                            <select  id="language-select-select" name="language-select-select" class="form-control add-type" >
                                                 <option value="0">Select Language</option>
                                                 <option value="english">English</option>
                                                 <option value="hindi">Hindi</option>
@@ -2044,7 +2020,16 @@
 
 $(document).on("click", ".toggle", function(){
     //alert("gggg");
-    $(".collapse-content").removeClass("show");
+    if(!$(this).next(".collapse-content")[0].classList.contains('show')){
+        $(".collapse-content.show").not(this.nextSibling).removeClass("show");
+    }
+    console.log(this.parentElement.parentElement.classList.contains('paused'));
+    if(this.parentElement.parentElement.classList.contains('paused')){
+        this.parentElement.parentElement.classList.remove('paused');
+    }else{
+        $('.main-wrap.active').addClass('paused');
+    }
+    console.log("toggle collapsible content");
     $(this).next(".collapse-content").toggleClass("show");
     $(this).find(".sub-heading").toggle();
 });
@@ -2245,7 +2230,7 @@ $(document).on("click", ".toggle", function(){
                                 $(this).parents(".main-wrap.my-profile").removeClass("active");   
                                  $(this).parents(".main-wrap.my-profile").addClass("filled"); 
                                  $(this).parents(".main-wrap.my-profile").find(".mumer-heading").addClass("toggle");
-                                $(this).parents(".main-wrap.my-profile").siblings("#step5").addClass("active");
+                                $(this).parents(".main-wrap.my-profile").siblings("#step-confirm").addClass("active");
                                 var target = $(this.hash);
                                 target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
                                 if (target.length) {
