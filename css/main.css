@@ -135,6 +135,7 @@ a:hover {
   letter-spacing: normal;
   color: #333333;
   margin-bottom: 15px;
+  width: calc(100% - 20px);
 }
 .custom-modal .modal-content ul li {
   font-size: 13px;
@@ -905,6 +906,7 @@ span.outstanding.price-indication {
   content: "";
   top: 14px;
   right: 10px;
+  right: 20px;
   width: 0;
   height: 0;
   border: 6px solid transparent;
@@ -2714,6 +2716,7 @@ input.connect-form-input{
   box-sizing: border-box;
   padding: 10px 20px;
   height: 40px;
+  /* padding-right: 5px; */
 }
 .add-on-offer-list-wrapper{
   padding: 0;
