@@ -165,7 +165,7 @@ function resetThisStep(step){
         default:
             document.querySelector('#'+step).classList.remove('filled');
             document.querySelector('#'+step).classList.remove('active');
-            document.querySelector('#'+step).classList.remove('paused');
+            // document.querySelector('#'+step).classList.remove('paused');
             document.querySelector('#'+step).classList.add('hidden')
             break;
     }
@@ -277,7 +277,7 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
             // case of Annual Fee Waiver
             if(isAvail){
                 assignActionToStep('step-annual-fee','avail')
-                // window.location.pathname = "../success-sr-fees.html"
+                window.location.pathname = "./success-sr-fees.html"
                 break;
             }
             // showNextStep('step-other-offers',currentStepOverride?currentStepOverride:'step3-1');
@@ -352,7 +352,7 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
             assignActionToStep('step-low-credit-usage','skip')
             pushIfNew('step-confirm','')
             showNextStep('step-confirm','step-low-credit-usage');
-            $('.main-wrap.paused').removeClass('paused');
+            // $('.main-wrap.paused').removeClass('paused');
             changeNumberOnActiveStep();
             $('#step-low-credit-usage .collapse-content.show').removeClass('show')
             break;
@@ -361,16 +361,16 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
             if(isAvail){
                 const selectedOffer = $('input[name="more-offers-radio"]:checked').val();
                 handleOfferSelection(selectedOffer)
-                assignActionToStep('step-other-offers','avail')
                 break;
             }
             // write what else happens here
             pushIfNew('step-confirm','')
             assignActionToStep('step-other-offers','skip');
             showNextStep('step-confirm','step-other-offers');
-            $('.main-wrap.paused').removeClass('paused');
+            // $('.main-wrap.paused').removeClass('paused');
             $('#step-other-offers .collapse-content.show').removeClass('show');
             resetTermsCheckbox()
+            changeNumberOnActiveStep()            
             break;
         // case 'step4-3':
         //     // case for step 4 change billing cycle in  "billing cycle issues."
@@ -389,7 +389,7 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
             assignActionToStep('step3-addon','skip');
             pushIfNew('step-addon-confirm','')
             showNextStep('step-addon-confirm','step3-addon');
-            $('.main-wrap.paused').removeClass('paused');
+            // $('.main-wrap.paused').removeClass('paused');
             $('#step3-addon .collapse-content.show').removeClass('show');
             break;
         
@@ -436,25 +436,34 @@ function changeNumberOnActiveStep(){
 function handleOfferSelection(selection){
     switch (selection) {
         case "annual-fee-waiver":
-            handleStepChange('step3-1',true);
+            pushIfNew('step-annual-fee','')
+            window.location.pathname = "./success-sr-fees.html"
             break;
         case "fee-reversal":
-            handleStepChange('step3-5',true,'step-other-offers');
+            assignActionToStep('step-other-offers','avail')
+            pushIfNew('step-request-fee-waiver','')         
+            showNextStep('step-request-fee-waiver','step-other-offers');      
             // make it step 5 in html
             changeNumberOnActiveStep()
             break;
         case "credit-limit-increase":
-            handleStepChange('step3-2',true);
+            assignActionToStep('step-other-offers','avail') 
+            $('#redirect-modal').show();
             break;
         case "get-reward-points":
-            // handleStepChange('step3-1');
+            assignActionToStep('step-other-offers','avail') 
+            window.location.pathname = "./success-sr-fees.html"
             break;
         case "change-billing-cycle":
-            handleStepChange('step3-3',true,'step-other-offers')
+            assignActionToStep('step-other-offers','avail') 
+            pushIfNew('step-change-billing-cycle','');
+            showNextStep('step-change-billing-cycle','step-other-offers');
+            $('#step-other-offers .collapse-content.show').removeClass('show');
             changeNumberOnActiveStep(5)
             break;
         case "card-features-and-offers":
-            handleStepChange('step3-1');
+            assignActionToStep('step-other-offers','avail') 
+            window.location.pathname = "./success-sr-fees.html"
             break;
         default:
             break;

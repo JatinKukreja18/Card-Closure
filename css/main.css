@@ -2887,11 +2887,11 @@ label.card-label::after{
 }
 .radio-buttons-block [type="radio"]:checked + label .card-radio-header{
   border:2px solid #1f95db ;
-  border-bottom: 1px solid #1f95db;
+  border-bottom: 1px solid #ddd;
 }
 .radio-buttons-block [type="radio"]:checked + label .card-radio-body{
   border:2px solid #1f95db ;
-  border-top: 1px solid #1f95db;
+  border-top: 1px solid #ddd;
 }
 @media (max-width:767px) {
   .others-text,

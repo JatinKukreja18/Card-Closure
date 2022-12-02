@@ -1651,7 +1651,7 @@
                                 <div class="collapse-content ">
                                     <div class="reinstatement-content-wrapp">
                                         
-                                        <div class="form-control custom-select custom-select-reusable is70" id="fee-waiver-select">                                            
+                                        <div class="form-control custom-select custom-select-reusable is70 full-width-mobiled="fee-waiver-select">                                            
                                             <select id="fw-select" name="fw-select" class="form-control fw-select">
                                                 <option value="">Select a request</option>
                                                 <option value="Late Payment Fee">Late Payment Fee</option>
@@ -2023,12 +2023,12 @@ $(document).on("click", ".toggle", function(){
     if(!$(this).next(".collapse-content")[0].classList.contains('show')){
         $(".collapse-content.show").not(this.nextSibling).removeClass("show");
     }
-    console.log(this.parentElement.parentElement.classList.contains('paused'));
-    if(this.parentElement.parentElement.classList.contains('paused')){
-        this.parentElement.parentElement.classList.remove('paused');
-    }else{
-        $('.main-wrap.active').addClass('paused');
-    }
+    // console.log(this.parentElement.parentElement.classList.contains('paused'));
+    // if(this.parentElement.parentElement.classList.contains('paused')){
+    //     this.parentElement.parentElement.classList.remove('paused');
+    // }else{
+    //     $('.main-wrap.active').addClass('paused');
+    // }
     console.log("toggle collapsible content");
     $(this).next(".collapse-content").toggleClass("show");
     $(this).find(".sub-heading").toggle();
