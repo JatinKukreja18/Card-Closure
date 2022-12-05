@@ -1235,7 +1235,7 @@
 
                             <div class="">
                                 <div class="mumer-heading">
-                                    <span class="number-count numeric">3</span><span class="number-count check-img"><img src="img/path-copy.svg" /></span> Personalized Offer
+                                    <span class="number-count numeric">3</span><span class="number-count check-img"><img src="img/path-copy.svg" /></span> Personalised Offer
                                 </div>
                                 <div class="collapse-content ">
                                     <div class="reinstatement-content-wrapp">
@@ -1260,7 +1260,7 @@
                             <div class="">
                                 <div class="mumer-heading">
                                     <span class="number-count numeric">3</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> Personalized Offer
+                                        <img src="img/path-copy.svg" /></span> Personalised Offer
                                 </div>
                                 <div class="collapse-content ">
                                     <div class="reinstatement-content-wrapp">
@@ -1285,7 +1285,7 @@
                             <div class="">
                                 <div class="mumer-heading">
                                     <span class="number-count numeric">3</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> Personalized Offer
+                                        <img src="img/path-copy.svg" /></span> Personalised Offer
                                 </div>
                                 <div class="collapse-content ">
                                     <div class="reinstatement-content-wrapp">
@@ -1311,7 +1311,7 @@
                             <div class="">
                                 <div class="mumer-heading">
                                     <span class="number-count numeric">3</span><span class="number-count check-img">
-                                        <img src="img/path-copy.svg" /></span> Personalized Offer
+                                        <img src="img/path-copy.svg" /></span> Personalised Offer
                                 </div>
                                 <div class="collapse-content ">
                                     <div class="reinstatement-content-wrapp">
@@ -1679,11 +1679,12 @@
                                         <img src="img/path-copy.svg" /></span> 
                                     <div class="main-heading-main">
                                         <div class="main-heading">Confirm</div> 
-                                        <div class="sub-heading visible">Please review your request:</div>
+
                                     </div>
                                 </div>
                                 <div class="collapse-content ">
                                     <div class="reinstatement-content-wrapp">
+                                        <div class="mb-20">Please review your request:</div>
                                         <div class="closure-reason">
                                             <b>Reason for closing card: XXX XXX-2345</b>
                                             <p id="closure-readon"></p>
@@ -2023,12 +2024,12 @@ $(document).on("click", ".toggle", function(){
     if(!$(this).next(".collapse-content")[0].classList.contains('show')){
         $(".collapse-content.show").not(this.nextSibling).removeClass("show");
     }
-    // console.log(this.parentElement.parentElement.classList.contains('paused'));
-    // if(this.parentElement.parentElement.classList.contains('paused')){
-    //     this.parentElement.parentElement.classList.remove('paused');
-    // }else{
-    //     $('.main-wrap.active').addClass('paused');
-    // }
+    console.log(this.parentElement.parentElement.classList.contains('paused'));
+    if(this.parentElement.parentElement.classList.contains('paused')){
+        this.parentElement.parentElement.classList.remove('paused');
+    }else{
+        $('.main-wrap.active').addClass('paused');
+    }
     console.log("toggle collapsible content");
     $(this).next(".collapse-content").toggleClass("show");
     $(this).find(".sub-heading").toggle();
