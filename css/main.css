@@ -2753,14 +2753,21 @@ ul.add-on-offer-list{
   resize: none;
   border: 1px solid #dddddd;
   padding: 20px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   max-width: 100%;
   -webkit-appearance: none;
 }
+.others-text{
+  width: 100%;
+  box-sizing: border-box;
+}
+.select-reson-cnt.others{
+  width: 70%;
+}
 input.connect-form-input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: normal;
   color: #a8a8a8;
