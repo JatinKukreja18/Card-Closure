@@ -2929,6 +2929,12 @@ label.card-label::after{
   border-top: 1px solid #ddd;
 }
 @media (max-width:767px) {
+  .custom-modal.has-cross .close{
+    right: 10px;
+  }
+  .custom-modal.has-cross .modal-content{
+    padding-right: 30px;
+  }
   .select-reson-cnt.others,
   .others-text,
   .full-width-mobile.custom-select-reusable.is70,
