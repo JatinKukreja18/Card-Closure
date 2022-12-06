@@ -244,6 +244,7 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
             else if(selectedReason.dataset.next == 'step-other'){
                 if(document.querySelector('textarea.others-text').value.length>3){
                     showNextStep('step-other-offers',selectedReason.dataset.current);
+                    document.querySelector('[name=more-offers-radio]:checked').checked = false;
                     activeStepsArray.push({id:'step-other-offers',actionTaken:''})
                     $('#step2 .collapse-content.show').removeClass('show')
                     $('#step2').find(".sub-heading").show();
@@ -251,6 +252,7 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
             }
             else if(selectedReason.dataset.next == 'step-no-offers'){
                 showNextStep('step-other-offers',selectedReason.dataset.current);
+                document.querySelector('[name=more-offers-radio]:checked').checked = false;
                 activeStepsArray.push({id:'step-other-offers',actionTaken:''})
                 $('#step2 .collapse-content.show').removeClass('show')
                 $('#step2').find(".sub-heading").show();
@@ -275,6 +277,7 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
             assignActionToStep('step-annual-fee','skip')
             pushIfNew('step-other-offers','')
             showNextStep('step-other-offers','step-annual-fee');
+            document.querySelector('[name=more-offers-radio]:checked').checked = false;
             $('#step-annual-fee .collapse-content.show').removeClass('show')
             changeNumberOnActiveStep()
             break;
@@ -288,6 +291,7 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
             assignActionToStep('step-low-credit','skip')
             pushIfNew('step-other-offers','')
             showNextStep('step-other-offers','step-low-credit');
+            document.querySelector('[name=more-offers-radio]:checked').checked = false;
             $('#step-low-credit .collapse-content.show').removeClass('show')
             break;            
         case 'step-billing-cycle':
@@ -302,12 +306,14 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
             assignActionToStep('step-billing-cycle','skip')
             pushIfNew('step-other-offers','')
             showNextStep('step-other-offers','step-billing-cycle');
+            document.querySelector('[name=more-offers-radio]:checked').checked = false;
             // case of Change Billing Cycle
             break;
         case 'step-no-offers':
             // case of no Offers
             // show step 4 of more offers
             showNextStep('step-other-offers','step-no-offers');
+            document.querySelector('[name=more-offers-radio]:checked').checked = false;
             changeNumberOnActiveStep()            
             break;
         case 'step-other-fees':
@@ -323,7 +329,8 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
             }
             assignActionToStep('step-other-fees','skip')
             pushIfNew('step-other-offers','')
-            showNextStep('step-other-offers','step-other-fees');            
+            showNextStep('step-other-offers','step-other-fees');   
+            document.querySelector('[name=more-offers-radio]:checked').checked = false;         
             break;
         // case 'step-other':
         //     if(isAvail){
@@ -345,6 +352,7 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
             showNextStep('step-other-offers','step-low-credit-usage');
             // $('.main-wrap.paused').removeClass('paused');
             changeNumberOnActiveStep();
+            document.querySelector('[name=more-offers-radio]:checked').checked = false;
             $('#step-low-credit-usage .collapse-content.show').removeClass('show')
             break;
         case 'step-other-offers':
@@ -392,11 +400,14 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
 
 function resetTermsCheckbox() {
     document.querySelector('#step-confirm .e-sign-button').classList.add('disabled')
-    document.querySelector('#step-confirm-others .e-sign-button').classList.add('disabled')
+    // document.querySelector('#step-confirm-others .e-sign-button').classList.add('disabled')
     document.querySelector('#terms-form-confirm-4 .e-sign-button').classList.add('disabled')
     document.querySelector('#step-confirm #terms_conditions_confirm').checked = false;
-    document.querySelector('#step-confirm-others #terms_conditions_step4').checked = false;
+    // document.querySelector('#step-confirm-others #terms_conditions_step4').checked = false;
     document.querySelector('#terms-form-confirm-4 input').checked = false;
+    $('.gray-otp-wrapp').hide();
+    $('.main-wrap.active .sbi-input-checkbox').removeClass('untouchable');
+    $('.tick-buttons-block').show();
 }
 function closeAllSelect(elmnt) {
     /* A function that will close all select boxes in the document,
@@ -442,7 +453,8 @@ function handleOfferSelection(selection){
         case "fee-reversal":
             assignActionToStep('step-other-offers','avail')
             pushIfNew('step-request-fee-waiver','')         
-            showNextStep('step-request-fee-waiver','step-other-offers');      
+            showNextStep('step-request-fee-waiver','step-other-offers');    
+            $('#step-other-offers .collapse-content.show').removeClass('show');  
             // make it step 5 in html
             changeNumberOnActiveStep()
             break;

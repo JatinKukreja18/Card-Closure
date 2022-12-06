@@ -2681,8 +2681,15 @@ hr {
 .sbi-input-checkbox input {
   width: 100%;
 }
+.sbi-input-checkbox.untouchable{
+  pointer-events: none;
+  cursor: not-allowed;
+}
 /* Latest changes */
-
+*{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
 .bottom-spacer{
   margin-top: 59px;
   height: 1px;
@@ -2721,6 +2728,11 @@ input.connect-form-input{
   height: 40px;
   /* padding-right: 5px; */
 }
+/* please remove right padding if date is giving alignment issue */
+input[type=date].connect-form-input{
+  padding-right: 16px;
+}
+/* please remove right padding if date is giving alignment issue */
 .add-on-offer-list-wrapper{
   padding: 0;
 }
@@ -2822,8 +2834,9 @@ p.big-para{
 }
 .closure-reason{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap:3px;
+  align-items: flex-start;
   font-size: 13px;
   color: #666;
   width: 100%;
@@ -2879,7 +2892,7 @@ label.card-label::after{
   background-image: linear-gradient(96deg, #b5e8ff, #f2f7fd);
 }
 .card-radio-header img{
-  width: 30px;
+  width: 40px;
   margin-right: 10px;
 }
 .card-radio-body{

@@ -1651,7 +1651,7 @@
                                 <div class="collapse-content ">
                                     <div class="reinstatement-content-wrapp">
                                         
-                                        <div class="form-control custom-select custom-select-reusable is70 full-width-mobiled" id="fee-waiver-select">                                            
+                                        <div class="form-control custom-select custom-select-reusable is70 full-width-mobile" id="fee-waiver-select">                                            
                                             <select id="fw-select" name="fw-select" class="form-control fw-select">
                                                 <option value="">Select a request</option>
                                                 <option value="Late Payment Fee">Late Payment Fee</option>
@@ -1686,8 +1686,8 @@
                                     <div class="reinstatement-content-wrapp">
                                         <div class="mb-20">Please review your request:</div>
                                         <div class="closure-reason">
-                                            <b>Reason for closing card: XXX XXX-2345</b>
-                                            <p id="closure-readon"></p>
+                                            <p>Selected Card: XXX XXX-2345</p>
+                                            <p>Reason for closing card: <span id="closure-readon"></span></p>
                                         </div>
                                         <div class="">
                                             <div class="card-view-holder message-seccess-view">
@@ -1713,8 +1713,28 @@
                                                 </div>
                                                 <div class="input-block tick-buttons-block">
                                                     <a href="javascript:void(0);" class="disabled blue-btn e-sign-button"  onclick="tickActive();">Submit</a>
-                                                    <a href="#" class="step-2 blue-btn mb-0 gray-btn">Cancel</a>
+                                                    <a href="#" class="step-2 blue-btn mb-0 gray-btn" onclick="window.location.reload()">Cancel</a>
                                                 </div>
+                                        </div>
+                                    </div>
+                                    <div class="gray-block gray-otp-wrapp">
+                                        <div class="card-view-holder message-seccess-view">
+                                        <div class="list-container-selectbox flex-row align-item-center cong-message">
+                                            <h2 class="trans-style d-inline-block m-0 mr-5">Enter One-Time Password</h2>
+                                            <p>Please enter the One Time Password (OTP) that has been sent on your mobile number XXXXXX7024 and email ID: PSXXXX@GMAIL.COM. If you have not received the OTP, click Resend OTP.</p>
+                                            <div class="otp-block">
+                                                <label>Enter OTP<span class="red-text">*</span></label>
+                                                <input 
+                                                oninput="validateOTP(this)"
+                                                type = "number"
+                                                maxlength = "6">
+                                                <a href="#" class="input-blue-text">Resend OTP</a>
+                                            </div>
+                                            <div class="otp-submit-block">
+                                                <!-- <a href="request-received-successfully.html" class="step-2 blue-btn mb-0">Submit</a> -->
+                                                <a href="javascript:void(0);" onclick="$('#connect-modal').show();" class="step-2 blue-btn mb-0 disabled">Submit</a>
+                                                <a href="#" class="step-2 blue-btn gray-btn mb-0">Cancel</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1734,8 +1754,8 @@
                                 <div class="collapse-content ">
                                     <div class="reinstatement-content-wrapp">
                                         <div class="closure-reason">
-                                            <b>Reason for closing card: XXX XXX-2345</b>
-                                            <p id="closure-readon"></p>
+                                            <p>Selected Card: XXX XXX-2345</p>
+                                            <p>Reason for closing card: <span id="closure-readon"></span></p>
                                         </div>
                                         <div class="">
                                             <div class="card-view-holder message-seccess-view">
@@ -1764,10 +1784,30 @@
                                             </form>
                                         </div>
                                     </div>
+                                    <div class="gray-block gray-otp-wrapp">
+                                        <div class="card-view-holder message-seccess-view">
+                                        <div class="list-container-selectbox flex-row align-item-center cong-message">
+                                            <h2 class="trans-style d-inline-block m-0 mr-5">Enter One-Time Password</h2>
+                                            <p>Please enter the One Time Password (OTP) that has been sent on your mobile number XXXXXX7024 and email ID: PSXXXX@GMAIL.COM. If you have not received the OTP, click Resend OTP.</p>
+                                            <div class="otp-block">
+                                                <label>Enter OTP<span class="red-text">*</span></label>
+                                                <input 
+                                                oninput="validateOTP(this)"
+                                                type = "number"
+                                                maxlength = "6">
+                                                <a href="#" class="input-blue-text">Resend OTP</a>
+                                            </div>
+                                            <div class="otp-submit-block">
+                                                <!-- <a href="request-received-successfully.html" class="step-2 blue-btn mb-0">Submit</a> -->
+                                                <a href="javascript:void(0);" onclick="$('#connect-modal').show();" class="step-2 blue-btn mb-0 disabled">Submit</a>
+                                                <a href="#" class="step-2 blue-btn gray-btn mb-0">Cancel</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </section>
-                        <section class="main-wrap my-profile border-top step-5-wrapp hidden" id="step-confirm-others">
+                        <!-- <section class="main-wrap my-profile border-top step-5-wrapp hidden" id="step-confirm-others">
 
                             <div class="">
                                 <div class="mumer-heading">
@@ -1781,8 +1821,8 @@
                                 <div class="collapse-content ">
                                     <div class="reinstatement-content-wrapp">
                                         <div class="closure-reason">
-                                            <b>Reason for closing card: XXX XXX-2345</b>
-                                            <p id="closure-readon"></p>
+                                            <p>Selected Card: XXX XXX-2345</p>
+                                            <p>Reason for closing card: <span id="closure-readon"></span></p>
                                         </div>
                                         <div class="">
                                             <div class="card-view-holder message-seccess-view">
@@ -1814,34 +1854,16 @@
                                     </div>
                                 </div>
                             </div>
-                        </section>
-                        <section class="main-wrap my-profile border-top gray-otp-wrapp">
+                        </section> -->
+                        <!-- <section class="main-wrap my-profile border-top gray-otp-wrapp">
                             <div class="reinstatement-content-wrapp">
-                                <div class="gray-block">
-                                    <div class="card-view-holder message-seccess-view">
-                                                                            <div class="list-container-selectbox flex-row align-item-center cong-message">
-                                                                                <h2 class="trans-style d-inline-block m-0 mr-5">Enter One-Time Password</h2>
-                                                                                <p>Please enter the One Time Password (OTP) that has been sent on your mobile number XXXXXX7024 and email ID: PSXXXX@GMAIL.COM. If you have not received the OTP, click Resend OTP.</p>
-                                                                                <div class="otp-block">
-                                                                                    <label>Enter OTP<span class="red-text">*</span></label>
-                                                                                    <input 
-                                                                                    oninput="validateOTP(this)"
-                                                                                    type = "number"
-                                                                                    maxlength = "6">
-                                                                                    <a href="#" class="input-blue-text">Resend OTP</a>
-                                                                                </div>
-                                                                                <div class="otp-submit-block">
-                                                                                    <!-- <a href="request-received-successfully.html" class="step-2 blue-btn mb-0">Submit</a> -->
-                                                                                    <a href="javascript:void(0);" onclick="$('#connect-modal').show();" class="step-2 blue-btn mb-0 disabled">Submit</a>
-                                                                                    <a href="#" class="step-2 blue-btn gray-btn mb-0">Cancel</a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
+                               
                                 </div>
                             </div>
                             
-                        </section>
+                        </section> -->
                     </section>
+                    <div class="bottom-spacer"></div>
                 </div>
             </div>  	  
             <div id="redirect-modal" class="modal custom-modal">
@@ -1910,7 +1932,7 @@
                             </div>
                         </form>
                     </section>
-                    <div class="bottom-spacer"></div>
+                    
                 </div>
             </div>
             <div id="myModal" class="modal custom-modal">
@@ -2703,9 +2725,10 @@ $(document).on("click", ".toggle", function(){
         window.location.href = closurelink
     }
     function tickActive() {
-                $('.gray-otp-wrapp').show();
-                $('.tick-buttons-block').hide();
-            }
+            $('.gray-otp-wrapp').show();
+            $('.tick-buttons-block').hide();
+            $('.main-wrap.active .sbi-input-checkbox').addClass('untouchable')
+        }
     function termsCheckboxChange(val){
         if(val.checked){
             $('.e-sign-button').removeClass('disabled');
