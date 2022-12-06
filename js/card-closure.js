@@ -230,6 +230,12 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
                 // handle card number properly hard coding here
                 displaySelection("step1","Primary Card: " + "XXXX-2345");
             }
+            removeStepsAfter(1);
+            $('#step1 .collapse-content.show').removeClass('show')
+            $('#step1').find(".sub-heading").show();
+            $('#reason-select select').prop('selectedIndex',0)
+            $('#step2 .select-selected').text('Select')
+            $('#step2').removeClass('filled')
             break;
         case 'step2':
             const selectedReason = document.querySelector('#step2 .select-selected');            
