@@ -1286,7 +1286,7 @@ strong {
 }
 @media (max-width: 767px) {
   .terms_conditions >span,.terms_conditions >a{
-    display: inline-block;
+    display: inline;
   }
   .step-view-btn a + a {
     margin-left: 0px;
