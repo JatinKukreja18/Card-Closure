@@ -2686,6 +2686,9 @@ hr {
   cursor: not-allowed;
 }
 /* Latest changes */
+.main-heading-main .sub-heading{
+  text-transform: capitalize;
+}
 .custom-modal.has-cross .modal-content{
   padding-top: 30px;
 }

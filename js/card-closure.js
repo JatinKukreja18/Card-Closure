@@ -218,7 +218,7 @@ function showNextStep(nextStep,currentStep,isAddon) {
 var currentStepIndex = 1;
 function handleStepChangeFrom(step,isAvail,currentStepOverride){
     // based on where the avail or skip is clicked from, called different functions/process
-    $('#step-other-offers .step-title').text('Other Offers');    
+       
     switch (step) {
         case 'step1':
             const selectCardType = $('input[name=card-group]:checked').val();
@@ -246,6 +246,7 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
                 activeStepsArray.push({id:'step3-addon',actionTaken:''});
                 $('#step2 .collapse-content.show').removeClass('show')
                 $('#step2').find(".sub-heading").show();
+                $('#step-other-offers .step-title').text('Other Offers'); 
             }
             else if(selectedReason.dataset.next == 'step-other'){
                 if(document.querySelector('textarea.others-text').value.length>3){
@@ -254,6 +255,7 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
                     activeStepsArray.push({id:'step-other-offers',actionTaken:''})
                     $('#step2 .collapse-content.show').removeClass('show')
                     $('#step2').find(".sub-heading").show();
+                    $('#step-other-offers .step-title').text('Other Offers'); 
                 }
             }
             else if(selectedReason.dataset.next == 'step-no-offers'){
@@ -270,6 +272,7 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
                 activeStepsArray.push({id:selectedReason.dataset.next,actionTaken:''})
                 $('#step2 .collapse-content.show').removeClass('show')
                 $('#step2').find(".sub-heading").show();
+                $('#step-other-offers .step-title').text('Other Offers'); 
             }
             activeStepsArray.find(a => a.id == 'step2').reason = selectedReason.dataset.next.substr(5);
             changeNumberOnActiveStep()
