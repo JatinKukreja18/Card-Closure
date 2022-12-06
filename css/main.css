@@ -2795,7 +2795,7 @@ textarea::-webkit-input-placeholder {
 }
 input.connect-form-input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: normal;
@@ -2803,7 +2803,7 @@ textarea:-ms-input-placeholder {
 }
 input.connect-form-input::placeholder,
 textarea::placeholder {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: normal;
