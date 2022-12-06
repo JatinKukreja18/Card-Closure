@@ -2686,6 +2686,12 @@ hr {
   cursor: not-allowed;
 }
 /* Latest changes */
+.custom-modal.has-cross .modal-content{
+  padding-top: 30px;
+}
+.custom-modal.has-cross .close{
+  top: 10px;
+}
 *{
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent;

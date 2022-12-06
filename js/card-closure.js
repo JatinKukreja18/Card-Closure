@@ -263,7 +263,7 @@ function handleStepChangeFrom(step,isAvail,currentStepOverride){
                 $('#step2 .collapse-content.show').removeClass('show')
                 $('#step2').find(".sub-heading").show();
                 changeNumberOnActiveStep()
-                $('#step-other-offers .step-title').text('Some Offers');
+                $('#step-other-offers .step-title').text('Some Offers For You');
             }
             else{
                 showNextStep(selectedReason.dataset.next,selectedReason.dataset.current);
